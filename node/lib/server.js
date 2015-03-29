@@ -4,6 +4,13 @@ var marked = require('marked');
 var moment = require('moment');
 var path = require('path');
 var proxy = require('express-http-proxy');
+var url = require('url');
+var LRU = require("lru-cache")
+
+var cache = LRU({
+    max: 500,
+    maxAge: 1000 * 60 * 60
+});
 
 var app = express();
 var config = require('../config.js');
@@ -20,8 +27,23 @@ app.use(function(req, res, next) {
 
 // setup proxy-middleware and rendering
 app.use(proxy(config.proxyUrl.protocol + '://' + config.proxyUrl.url, {
+    filter: function(req, res) {
+        var cacheKey = url.parse(req.url).path;
+        var hasCache = cache.has(cacheKey);
+
+        if( hasCache ) {
+            // don't proxy the request
+            res.set('Content-Type', 'text/html');
+            res.send(cache.get(cacheKey));
+            return false;
+        }
+        else {
+            // proxy the request
+            return true;
+        }
+    },
     forwardPath: function(req, res) {
-        return require('url').parse(req.url).path;
+        return url.parse(req.url).path;
     },
     intercept: function(data, req, res, callback) {
         var origData = data;
@@ -42,11 +64,11 @@ app.use(proxy(config.proxyUrl.protocol + '://' + config.proxyUrl.url, {
         if( data.template ) {
             res.render(data.template, {data: data}, function(err, html) {
                 if (err) {
-                    console.log(err);
                     res.status(500).send(JSON.stringify(err));
                 }
                 else {
                     res.set('Content-Type', 'text/html');
+                    cache.set(url.parse(req.url).path, html);
                     res.send(html);
                 }
 
