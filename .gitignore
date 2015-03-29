@@ -11,8 +11,11 @@ wordpress/wp-content/cache/
 wordpress/wp-content/upgrade/
 wordpress/wp-content/uploads/
 wordpress/wp-content/wp-cache-config.php
+wordpress/wp-content/plugins/advanced-custom-fields-pro/
+wordpress/wp-content/themes/twenty*/
 .DS_Store
 node_modules/
 node/node_modules/
 node/configs/*.js
 node/config.js
+node/npm-debug.log
