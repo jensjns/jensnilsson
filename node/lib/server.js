@@ -5,7 +5,8 @@ var moment = require('moment');
 var path = require('path');
 var proxy = require('express-http-proxy');
 var url = require('url');
-var LRU = require("lru-cache")
+var LRU = require("lru-cache");
+var router = express.Router();
 
 var cache = LRU({
     max: 500,
@@ -24,6 +25,12 @@ app.use(function(req, res, next) {
     res.locals.moment = moment;
     next();
 });
+
+router.get('/clear-cache', function(req, res, next) {
+    cache.reset();
+    res.json({success: true});
+});
+app.use(router);
 
 // setup proxy-middleware and rendering
 app.use(proxy(config.proxyUrl.protocol + '://' + config.proxyUrl.url, {
