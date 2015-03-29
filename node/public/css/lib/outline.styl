@@ -1,0 +1,36 @@
+
+// {shorthand for rule}{shorthand for direction}
+/*
+    b - border
+*/
+
+/*
+    t - top
+    r - right
+    b - bottom
+    l - left
+    v - vertical
+    h - horizontal
+    a - all
+*/
+
+t(rule, size, u)
+    {rule}-top (u ? unit(size, u) : size)
+r(rule, size, u)
+    {rule}-right (u ? unit(size, u) : size)
+b(rule, size, u)
+    {rule}-bottom (u ? unit(size, u) : size)
+l(rule, size, u)
+    {rule}-left (u ? unit(size, u) : size)
+v(rule, size, u)
+    t(rule, size, u)
+    b(rule, size, u)
+h(rule, size, u)
+    r(rule, size, u)
+    l(rule, size, u)
+a(rule, size, u)
+    {rule} (u ? unit(size, u) : size)
+
+for n in a v h t r b l
+    .o{n}
+        n(border)

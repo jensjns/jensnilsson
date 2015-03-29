@@ -1,0 +1,14 @@
+{
+  "name": "jensnilsson",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jens Nilsson <jens@jensnilsson.nu>",
+  "license": "MIT",
+  "dependencies": {
+    "gulp": "^3.8.9"
+  }
+}

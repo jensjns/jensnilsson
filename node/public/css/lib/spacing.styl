@@ -1,0 +1,55 @@
+$baseSize = 10
+$sizes = {
+    '1': 1,
+    '2': 2,
+    '3': 3,
+    '4': 4,
+    '5': 5,
+    '6': 6,
+    '7': 7,
+    '8': 8,
+    '16': 16
+};
+
+
+// {shorthand for rule}{shorthand for direction}{integer-index (will multiply with the base-size), or a for auto (only margin)}
+/*
+    p - padding
+    m - margin
+*/
+
+/*
+    t - top
+    r - right
+    b - bottom
+    l - left
+    v - vertical
+    h - horizontal
+    a - all
+*/
+
+t(rule, size, u)
+    {rule}-top (u ? unit(size, u) : size)
+r(rule, size, u)
+    {rule}-right (u ? unit(size, u) : size)
+b(rule, size, u)
+    {rule}-bottom (u ? unit(size, u) : size)
+l(rule, size, u)
+    {rule}-left (u ? unit(size, u) : size)
+v(rule, size, u)
+    t(rule, size, u)
+    b(rule, size, u)
+h(rule, size, u)
+    r(rule, size, u)
+    l(rule, size, u)
+a(rule, size, u)
+    {rule} (u ? unit(size, u) : size)
+
+for n in a v h t r b l
+    for m in $sizes
+        .p{n}{m}
+            n(padding, ($sizes[m]*$baseSize), "px")
+        .m{n}{m}
+            n(margin, ($sizes[m]*$baseSize), "px")
+    .m{n}a
+        n(margin, auto, false)

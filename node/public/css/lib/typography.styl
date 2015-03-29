@@ -1,0 +1,30 @@
+@require 'settings'
+@require 'typographic'
+
+$serif = 'Playfair Display', serif
+$sans-serif = 'Open Sans', sans-serif
+
+
+.serif
+    font-family $serif
+    font-weight 400
+.sans-serif
+    font-family $sans-serif
+    font-weight 400
+
+.bold
+.b
+b
+strong
+    font-weight 700
+
+.italic
+.i
+    font-style italic
+
+.center-text
+    text-align center
+
+for c in colors
+    .c-{c}
+        color colors[c]

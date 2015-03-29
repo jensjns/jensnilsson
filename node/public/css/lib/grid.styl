@@ -1,0 +1,46 @@
+// grid definition
+
+percent(a, b)
+    (a/b*100)%
+
+.row
+    &:after
+        content ""
+        display table
+        clear both
+
+.unit
+    box-sizing border-box
+    display block
+    float left
+
+
+//Padding/gutter definition
+$gutter = 20px
+
+.gutter
+    padding-left $gutter
+    padding-right $gutter
+
+.gutter-all
+    padding $gutter
+
+.gutter-left
+    padding-left $gutter
+
+.gutter-right
+    padding-right $gutter
+
+grid(columns)
+    for n in 1..columns
+        .unit-{n}of{columns}
+            width percent(n, columns)
+        .unit-offset-{n}of{columns}
+            margin-left percent(n, columns)
+
+grid(12)
+grid(6)
+grid(4)
+grid(3)
+grid(2)
+grid(1)

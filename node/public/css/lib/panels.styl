@@ -1,0 +1,18 @@
+@require 'settings'
+
+for c in colors
+    .panel-{c}
+        background-color colors[c]
+
+background-linear-gradient(startPoint, startColor, startInterval, endColor, endInterval, deprecatedWebkitStartPoint = false, deprecatedWebkitEndPoint = false)
+    background-color startColor
+    if deprecatedWebkitStartPoint && deprecatedWebkitEndPoint
+        background-image -webkit-gradient(linear, deprecatedWebkitStartPoint, deprecatedWebkitEndPoint, color-stop(startInterval, startColor), color-stop(endInterval, endColor))
+    background-image -webkit-linear-gradient(startPoint, startColor startInterval, endColor endInterval)
+    background-image -moz-linear-gradient(startPoint, startColor startInterval, endColor endInterval)
+    background-image -ms-linear-gradient(startPoint, startColor startInterval, endColor endInterval)
+    background-image -o-linear-gradient(startPoint, startColor startInterval, endColor endInterval)
+    background-image linear-gradient(startPoint, startColor startInterval, endColor endInterval)
+
+.panel-light-blue-to-dark-blue
+    background-linear-gradient(135deg, colors["light-blue"], 0%, colors["dark-blue"], 100%)
