@@ -27,7 +27,10 @@ app.use(function(req, res, next) {
 });
 
 router.get('/clear-cache', function(req, res, next) {
-    cache.reset();
+    if( config.cache ) {
+        cache.reset();
+    }
+
     res.json({success: true});
 });
 app.use(router);
@@ -35,19 +38,19 @@ app.use(router);
 // setup proxy-middleware and rendering
 app.use(proxy(config.proxyUrl.protocol + '://' + config.proxyUrl.url, {
     filter: function(req, res) {
-        var cacheKey = url.parse(req.url).path;
-        var hasCache = cache.has(cacheKey);
+        if( config.cache ) {
+            var cacheKey = url.parse(req.url).path;
+            var hasCache = cache.has(cacheKey);
 
-        if( hasCache ) {
-            // don't proxy the request
-            res.set('Content-Type', 'text/html');
-            res.send(cache.get(cacheKey));
-            return false;
+            if( hasCache ) {
+                // don't proxy the request
+                res.set('Content-Type', 'text/html');
+                res.send(cache.get(cacheKey));
+                return false;
+            }
         }
-        else {
-            // proxy the request
-            return true;
-        }
+
+        return true;
     },
     forwardPath: function(req, res) {
         return url.parse(req.url).path;
@@ -74,8 +77,11 @@ app.use(proxy(config.proxyUrl.protocol + '://' + config.proxyUrl.url, {
                     res.status(500).send(JSON.stringify(err));
                 }
                 else {
+                    if( config.cache ) {
+                        cache.set(url.parse(req.url).path, html);
+                    }
+
                     res.set('Content-Type', 'text/html');
-                    cache.set(url.parse(req.url).path, html);
                     res.send(html);
                 }
 
