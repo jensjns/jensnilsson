@@ -9,7 +9,6 @@
   "author": "Jens Nilsson <jens@jensnilsson.nu>",
   "license": "MIT",
   "dependencies": {
-    "gulp": "^3.8.9",
-    "lru-cache": "^2.5.0"
+    "gulp": "^3.8.9"
   }
 }

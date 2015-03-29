@@ -1,5 +1,5 @@
 {
-  "name": "jensnilsson frontend",
+  "name": "jensnilsson-frontend",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -21,6 +21,7 @@
     "gulp-wrap-amd": "^0.5.0",
     "jade": "^1.9.2",
     "marked": "^0.3.3",
-    "moment": "^2.9.0"
+    "moment": "^2.9.0",
+    "lru-cache": "^2.5.0"
   }
 }
