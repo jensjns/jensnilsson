@@ -704,6 +704,9 @@ h1 a {
 .no-dec {
   text-decoration: none;
 }
+a {
+  color: #01b2f1;
+}
 .serif {
   font-family: 'Playfair Display', serif;
   font-weight: 400;
