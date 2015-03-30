@@ -11,14 +11,15 @@ $sizes = {
     '16': 16
 };
 
-
-// {shorthand for rule}{shorthand for direction}{integer-index (will multiply with the base-size), or a for auto (only margin)}
 /*
+
+    Usage: {shorthand for rule}{shorthand for direction}{integer-index}
+
+    {shorthand for rule}
     p - padding
     m - margin
-*/
 
-/*
+    {shorthand for direction}
     t - top
     r - right
     b - bottom
@@ -26,6 +27,10 @@ $sizes = {
     v - vertical
     h - horizontal
     a - all
+
+    {integer-index}
+    [1-8]
+
 */
 
 t(rule, size, u)
@@ -45,11 +50,14 @@ h(rule, size, u)
 a(rule, size, u)
     {rule} (u ? unit(size, u) : size)
 
-for n in a v h t r b l
-    for m in $sizes
-        .p{n}{m}
-            n(padding, ($sizes[m]*$baseSize), "px")
-        .m{n}{m}
-            n(margin, ($sizes[m]*$baseSize), "px")
-    .m{n}a
-        n(margin, auto, false)
+spacing(baseSize, sizes)
+    for n in a v h t r b l
+        for m in sizes
+            .p{n}{m}
+                n(padding, (sizes[m]*baseSize), "px")
+            .m{n}{m}
+                n(margin, (sizes[m]*baseSize), "px")
+        .m{n}a
+            n(margin, auto, false)
+
+spacing($baseSize, $sizes)
