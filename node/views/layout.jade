@@ -5,13 +5,22 @@ html(style="background-image:url('#{data.siteSettings.backgroundImage.sizes['128
         link(rel='stylesheet' href='/static/css/style.min.css?v=20150330-2' type='text/css')
         link(rel='stylesheet' href='http://fonts.googleapis.com/css?family=Playfair+Display:400,700|Open+Sans:400italic,400,700' type='text/css')
         link(rel='stylesheet' href='/static/scripts/lib/Swiper-3.0.6/dist/css/swiper.min.css' type='text/css')
-        script(src='/static/scripts/lib/highlight.js/highlight.pack.js')
-        script(src='/static/scripts/lib/Swiper-3.0.6/dist/js/swiper.min.js')
         block styles
 
     body.mv8
         div.site.mha
             block content
+
+        if (data.siteSettings && data.siteSettings.googleAnalytics)
+            script.
+                (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+                ga('create', '#{data.siteSettings.googleAnalytics}', 'auto');
+                ga('send', 'pageview');
+        script(src='/static/scripts/lib/highlight.js/highlight.pack.js')
+        script(src='/static/scripts/lib/Swiper-3.0.6/dist/js/swiper.min.js')
         script(type='text/javascript').
             hljs.initHighlightingOnLoad();
             var swiper = new Swiper('.swiper-container', {
@@ -24,14 +33,5 @@ html(style="background-image:url('#{data.siteSettings.backgroundImage.sizes['128
                 preloadImages: false,
                 lazyLoading: true
             });
-
-        if (data.siteSettings && data.siteSettings.googleAnalytics)
-            script.
-                (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-                })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-                ga('create', '#{data.siteSettings.googleAnalytics}', 'auto');
-                ga('send', 'pageview');
         block scripts
             //script(data-main='/static/scripts/loader-main' src='/scripts/lib/require.js')
