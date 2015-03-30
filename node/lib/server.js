@@ -6,6 +6,7 @@ var path = require('path');
 var proxy = require('express-http-proxy');
 var url = require('url');
 var LRU = require("lru-cache");
+var compression = require('compression');
 var router = express.Router();
 
 var cache = LRU({
@@ -16,6 +17,7 @@ var cache = LRU({
 var app = express();
 var config = require('../config.js');
 
+app.use(compression());
 // Static content. Example: '/static/css/style.css'
 app.use('/static', express.static(path.join(__dirname, '../public')));
 
