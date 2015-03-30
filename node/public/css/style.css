@@ -783,3 +783,8 @@ pre {
 .relative {
   position: relative;
 }
+@media all and (max-width: 720px) {
+  body .site {
+    max-width: 100%;
+  }
+}
