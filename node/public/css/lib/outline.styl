@@ -1,10 +1,12 @@
 
-// {shorthand for rule}{shorthand for direction}
 /*
-    b - border
-*/
 
-/*
+    Usage: {shorthand for rule}{shorthand for direction}
+
+    {shorthand for rule}
+    b - border
+
+    {shorthand for direction}
     t - top
     r - right
     b - bottom
@@ -31,6 +33,8 @@ h(rule, size, u)
 a(rule, size, u)
     {rule} (u ? unit(size, u) : size)
 
-for n in a v h t r b l
-    .o{n}
-        n(border)
+outline(size)
+    for n in a v h t r b l
+        .o{n}
+            n(border, size, 'px')
+
