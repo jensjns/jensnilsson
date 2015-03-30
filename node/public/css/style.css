@@ -1,7 +1,7 @@
 @import url("http://fonts.googleapis.com/css?family=Open+Sans:400,700|Montserrat:400,700");
 @import 'lib/normalize.css';
 @import 'lib/jns-github-md.css';
-@import '../scripts/lib/highlight.js/styles/monokai_sublime.css';
+@import 'lib/jns-monokai_sublime.css';
 .panel-dark-gray {
   background-color: #3e3f3a;
 }
@@ -21,7 +21,7 @@
   background-color: #026ea8;
 }
 .panel-code-bg {
-  background-color: #23241f;
+  background-color: #232323;
 }
 .panel-dark {
   background-color: #1b1e22;
@@ -747,7 +747,7 @@ strong {
   color: #026ea8;
 }
 .c-code-bg {
-  color: #23241f;
+  color: #232323;
 }
 .c-dark {
   color: #1b1e22;
