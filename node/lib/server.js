@@ -63,7 +63,7 @@ app.use(proxy(config.proxyUrl.protocol + '://' + config.proxyUrl.url, {
 
         // replace all occurences of wp's url with the public url
         var re = new RegExp(config.proxyUrl.url, 'g');
-        data = data.replace(re, config.publicUrl.url);
+        data = data.replace(re, config.publicUrl.url).replace(/\[proxyurl\]/g, config.proxyUrl.url);
 
         try {
             data = JSON.parse(data);
