@@ -10,7 +10,7 @@ var compression = require('compression');
 var router = express.Router();
 
 var cache = LRU({
-    max: 500,
+    max: 50,
     maxAge: 1000 * 60 * 60
 });
 
