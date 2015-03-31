@@ -181,7 +181,7 @@ add_filter('acf/load_value/name=content_blocks', 'filter_content_blocks', 10, 3)
 /* decorates the passed obj with the main menu */
 function apply_main_menu( $obj ) {
     $obj->menu = new stdClass();
-    $obj->menu->data = 'hej';
+    $obj->menu->data = '';
 }
 add_filter( 'apply-main-menu', 'apply_main_menu', 10, 1 );
 
