@@ -40,7 +40,7 @@
 		};
 		$allCategories = array_unique($allCategories);
 		$posts->categories = array_values($allCategories);
-
+		apply_filters( 'apply-page-meta', $posts );
 	    send_json($posts);
 	};
 	renderCategory();

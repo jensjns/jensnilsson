@@ -36,6 +36,8 @@ function jensnilsson_theme_setup() {
     add_image_size( '1080', 1080 ); // site width
     add_image_size( '1080.16/9', 1080, 607, true); // site width 16/9
     add_image_size( '1280', 1280); // 1280
+
+    add_theme_support( 'title-tag' );
 }
 add_action( 'after_setup_theme', 'jensnilsson_theme_setup' );
 
@@ -193,3 +195,11 @@ function apply_site_settings( $obj ) {
     );
 }
 add_filter( 'apply-site-settings', 'apply_site_settings', 10, 1 );
+
+
+function apply_page_meta($obj) {
+    $obj->pageMeta = array(
+        'title' => wp_title( '|', false, 'right' )
+    );
+}
+add_filter( 'apply-page-meta', 'apply_page_meta', 10, 1);

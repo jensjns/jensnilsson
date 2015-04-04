@@ -33,5 +33,6 @@
     }
 
     $data->menu = get_menu_json('main');
+    apply_filters( 'apply-page-meta', $data );
 
     send_json($data);
