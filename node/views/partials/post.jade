@@ -5,8 +5,9 @@ article.panel-white.mb16.relative
         h1.serif.bold.center-text.ph2
             a.c-dark-gray(href="#{post.permalink}") #{post.title}
         p.center-text.sans-serif.c-light-gray #{post.author.displayName} on #[time(datetime=post.postDate) !{moment(post.postDate).format('MMMM Do, YYYY')}]
-        div.author
-            img.round(src="#{post.author.profileImage.sizes.thumbnail}")
+        a.author(href="#{post.author.url}")
+            div
+                img.round(src="#{post.author.profileImage.sizes.thumbnail}")
     div.mb4
         each contentBlock in post.contentBlocks
             div.mb3(class="#{contentBlock.blockType}")
