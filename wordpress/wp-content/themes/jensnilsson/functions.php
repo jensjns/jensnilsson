@@ -42,6 +42,10 @@ function jensnilsson_theme_setup() {
 }
 add_action( 'after_setup_theme', 'jensnilsson_theme_setup' );
 
+function request_cache_reset() {
+    file_get_contents(PUBLIC_URL . '/clear-cache');
+}
+
 // clear cache on save
 function clear_node_cache( $post_id ) {
     // if this is just a revision, don't clear
@@ -49,40 +53,56 @@ function clear_node_cache( $post_id ) {
         return;
     }
 
-    file_get_contents(PUBLIC_URL . '/clear-cache');
+    request_cache_reset();
 }
 add_action( 'save_post', 'clear_node_cache' );
 
 // get data about an author
-function get_full_author_profile( $authorId ) {
-    $author = new stdClass();
+function get_full_author_profile( $author_id, $update_transient = false ) {
 
-    $fields = array(
-        array('display_name', 'displayName'),
-        array('user_nicename', 'niceName'),
-        array('user_email', 'email')
-    );
+    if ( ( false === ( $author = get_transient( 'full_author_profile_' . $author_id ) ) ) || $update_transient == true ) {
+         // this code runs when there is no valid transient set
+        $author = new stdClass();
 
-    $custom_fields = array(
-        array('profile_image', 'profileImage'),
-        array('social_links', 'socialLinks'),
-        array('profile_description', 'profileDescription')
-    );
+        $fields = array(
+            array('display_name', 'displayName'),
+            array('user_nicename', 'niceName'),
+            array('user_email', 'email')
+        );
 
-    // get built-in author meta
-    foreach( $fields as $field ) {
-        $author->$field[1] = get_the_author_meta( $field[0], $authorId );
+        $custom_fields = array(
+            array('profile_image', 'profileImage'),
+            array('social_links', 'socialLinks'),
+            array('profile_description', 'profileDescription'),
+            array('instagram_user_id', 'instagramUserId'),
+        );
+
+        // get built-in author meta
+        foreach( $fields as $field ) {
+            $author->$field[1] = get_the_author_meta( $field[0], $author_id );
+        }
+
+        // get custom author meta
+        foreach( $custom_fields as $field ) {
+            $author->$field[1] = get_field( $field[0], 'user_' . $author_id );
+        }
+
+        $author->url = get_author_posts_url($author_id, $author->niceName);
+
+        set_transient('full_author_profile_' . $author_id, $author, YEAR_IN_SECONDS*100);
     }
-
-    // get custom author meta
-    foreach( $custom_fields as $field ) {
-        $author->$field[1] = get_field( $field[0], 'user_' . $authorId );
-    }
-
-    $author->url = get_author_posts_url($authorId, $author->niceName);
 
     return $author;
 }
+
+function full_author_profile_updated( $user_id, $old_user_data ) {
+    // update transient for the user
+    get_full_author_profile( $user_id, true );
+
+    // request a cache reset
+    request_cache_reset();
+}
+add_action( 'profile_update', 'full_author_profile_updated', 10, 2 );
 
 // filter post post-type
 function filter_post( $post ) {
