@@ -1,0 +1,19 @@
+extends layout
+
+block scripts
+    //script(data-main='/scripts/loader-main' src='/scripts/lib/require.js')
+
+block styles
+    //link(rel='stylesheet', href='/scripts/lib/leaflet-0.7.3/leaflet.css')
+
+block content
+    article.panel-white.relative.mb16.pt3.pb4
+        header.content-width.mha.ph2.center-text
+            img.round(src="#{data.profileImage.sizes.thumbnail}")
+            h1.serif.bold.center-text.ph2
+                span.c-dark-gray #{data.displayName}
+            if (data.email)
+                div.mb1
+                    #[span.octicon.octicon-mail.c-light] #[a(href="mailto:#{data.email}") #{data.email}]
+        div.mt3
+            div.ph2.markdown-body !{marked(data.profileDescription)}

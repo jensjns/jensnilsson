@@ -30,6 +30,7 @@ function init() {
 }
 add_action('init', 'init');
 
+// setup theme
 function jensnilsson_theme_setup() {
     add_image_size( 'wide', 1080, 300, true ); // cropped, wide
     add_image_size( 'square', 640, 640, true ); // cropped square
@@ -41,38 +42,69 @@ function jensnilsson_theme_setup() {
 }
 add_action( 'after_setup_theme', 'jensnilsson_theme_setup' );
 
-// Clear cache on save
+function request_cache_reset() {
+    file_get_contents(PUBLIC_URL . '/clear-cache');
+}
+
+// clear cache on save
 function clear_node_cache( $post_id ) {
-    // If this is just a revision, don't clear
+    // if this is just a revision, don't clear
     if ( wp_is_post_revision( $post_id ) ) {
         return;
     }
 
-    file_get_contents(PUBLIC_URL . '/clear-cache');
+    request_cache_reset();
 }
 add_action( 'save_post', 'clear_node_cache' );
 
-function get_full_author_profile( $authorId ) {
-    $author = new stdClass();
+// get data about an author
+function get_full_author_profile( $author_id, $update_transient = false ) {
 
-    $fields = array(
-        array('display_name', 'displayName'),
-    );
+    if ( ( false === ( $author = get_transient( 'full_author_profile_' . $author_id ) ) ) || $update_transient == true ) {
+         // this code runs when there is no valid transient set
+        $author = new stdClass();
 
-    $custom_fields = array(
-        array('profile_image', 'profileImage')
-    );
+        $fields = array(
+            array('display_name', 'displayName'),
+            array('user_nicename', 'niceName'),
+        );
 
-    foreach( $fields as $field ) {
-        $author->$field[1] = get_the_author_meta( $field[0], $authorId );
-    }
+        $custom_fields = array(
+            array('profile_image', 'profileImage'),
+            array('social_links', 'socialLinks'),
+            array('profile_description', 'profileDescription'),
+            array('instagram_user_id', 'instagramUserId'),
+            array('website', 'website'),
+            array('location', 'location'),
+            array('public_email', 'email'),
+        );
 
-    foreach( $custom_fields as $field ) {
-        $author->$field[1] = get_field( $field[0], 'user_' . $authorId );
+        // get built-in author meta
+        foreach( $fields as $field ) {
+            $author->$field[1] = get_the_author_meta( $field[0], $author_id );
+        }
+
+        // get custom author meta
+        foreach( $custom_fields as $field ) {
+            $author->$field[1] = get_field( $field[0], 'user_' . $author_id );
+        }
+
+        $author->url = get_author_posts_url($author_id, $author->niceName);
+
+        set_transient('full_author_profile_' . $author_id, $author, YEAR_IN_SECONDS*100);
     }
 
     return $author;
 }
+
+function full_author_profile_updated( $user_id, $old_user_data ) {
+    // update transient for the user
+    get_full_author_profile( $user_id, true );
+
+    // request a cache reset
+    request_cache_reset();
+}
+add_action( 'profile_update', 'full_author_profile_updated', 10, 2 );
 
 // filter post post-type
 function filter_post( $post ) {
@@ -180,13 +212,14 @@ function filter_content_blocks( $value, $post_id, $field ) {
 }
 add_filter('acf/load_value/name=content_blocks', 'filter_content_blocks', 10, 3);
 
-/* decorates the passed obj with the main menu */
+// decorates the passed object with the main menu.
 function apply_main_menu( $obj ) {
     $obj->menu = new stdClass();
     $obj->menu->data = '';
 }
 add_filter( 'apply-main-menu', 'apply_main_menu', 10, 1 );
 
+// decorates the passed object with the sites global settings.
 function apply_site_settings( $obj ) {
     $obj->siteSettings = array(
         'googleAnalytics' => get_field( 'google_analytics_tracking_code', 'options' ),
@@ -196,7 +229,7 @@ function apply_site_settings( $obj ) {
 }
 add_filter( 'apply-site-settings', 'apply_site_settings', 10, 1 );
 
-
+// decorates the passed object with page-specific meta-data.
 function apply_page_meta($obj) {
     $obj->pageMeta = array(
         'title' => wp_title( '|', false, 'right' )
