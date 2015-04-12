@@ -26,6 +26,7 @@ function init() {
         )
     );
 
+    include 'acf/fields.php';
     include 'post_types/project.php';
 }
 add_action('init', 'init');
