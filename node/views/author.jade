@@ -14,6 +14,6 @@ block content
                 span.c-dark-gray #{data.displayName}
             if (data.email)
                 div.mb1
-                    #[span.octicon.octicon-mail.c-light] #[a(href="mailto:#{data.email}") #{data.email}]
+                    #[span.octicon.octicon-mail.c-light] #[a.sans-serif(href="mailto:#{data.email}") #{data.email}]
         div.mt3
             div.ph2.markdown-body !{marked(data.profileDescription)}
