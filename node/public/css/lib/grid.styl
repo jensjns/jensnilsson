@@ -4,6 +4,7 @@ percent(a, b)
     (a/b*100)%
 
 .row
+    float left
     &:after
         content ""
         display table
@@ -31,11 +32,11 @@ $gutter = 20px
 .gutter-right
     padding-right $gutter
 
-grid(columns)
+grid(columns, prefix = '')
     for n in 1..columns
-        .unit-{n}of{columns}
+        .unit{prefix}-{n}of{columns}
             width percent(n, columns)
-        .unit-offset-{n}of{columns}
+        .unit{prefix}-offset-{n}of{columns}
             margin-left percent(n, columns)
 
 grid(12)
@@ -44,3 +45,9 @@ grid(4)
 grid(3)
 grid(2)
 grid(1)
+
+@media all and (max-width: 768px)
+    grid(4, '-m')
+    grid(3, '-m')
+    grid(2, '-m')
+    grid(1, '-m')

@@ -2,6 +2,7 @@
 @import 'lib/normalize.css';
 @import 'lib/jns-github-md.css';
 @import 'lib/jns-monokai_sublime.css';
+@import 'lib/octicons/octicons.css';
 .panel-dark-gray {
   background-color: #3e3f3a;
 }
@@ -475,6 +476,9 @@ body.gradient-bg:before {
 .mla {
   margin-left: auto;
 }
+.row {
+  float: left;
+}
 .row:after {
   content: "";
   display: table;
@@ -666,9 +670,74 @@ body.gradient-bg:before {
 .unit-offset-1of1 {
   margin-left: 100%;
 }
+@media all and (max-width: 768px) {
+  .unit-m-1of4 {
+    width: 25%;
+  }
+  .unit-m-offset-1of4 {
+    margin-left: 25%;
+  }
+  .unit-m-2of4 {
+    width: 50%;
+  }
+  .unit-m-offset-2of4 {
+    margin-left: 50%;
+  }
+  .unit-m-3of4 {
+    width: 75%;
+  }
+  .unit-m-offset-3of4 {
+    margin-left: 75%;
+  }
+  .unit-m-4of4 {
+    width: 100%;
+  }
+  .unit-m-offset-4of4 {
+    margin-left: 100%;
+  }
+  .unit-m-1of3 {
+    width: 33.3333333333333%;
+  }
+  .unit-m-offset-1of3 {
+    margin-left: 33.3333333333333%;
+  }
+  .unit-m-2of3 {
+    width: 66.6666666666667%;
+  }
+  .unit-m-offset-2of3 {
+    margin-left: 66.6666666666667%;
+  }
+  .unit-m-3of3 {
+    width: 100%;
+  }
+  .unit-m-offset-3of3 {
+    margin-left: 100%;
+  }
+  .unit-m-1of2 {
+    width: 50%;
+  }
+  .unit-m-offset-1of2 {
+    margin-left: 50%;
+  }
+  .unit-m-2of2 {
+    width: 100%;
+  }
+  .unit-m-offset-2of2 {
+    margin-left: 100%;
+  }
+  .unit-m-1of1 {
+    width: 100%;
+  }
+  .unit-m-offset-1of1 {
+    margin-left: 100%;
+  }
+}
 html {
   font-size: 16px;
   background: no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
 }
 body.gradient-bg:before {
@@ -682,7 +751,7 @@ body.gradient-bg:before {
 }
 body .site {
   width: 1080px;
-  max-width: 80%;
+  max-width: 90%;
 }
 pre,
 code {
@@ -707,12 +776,20 @@ h1 a {
 a {
   color: #01b2f1;
 }
+.stacked-octicons .octicon {
+  width: 16px;
+  text-align: center;
+}
 .serif {
   font-family: 'Playfair Display', serif;
   font-weight: 400;
 }
 .sans-serif {
   font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+}
+.sans-serif-alt {
+  font-family: 'Montserrat';
   font-weight: 400;
 }
 .bold,
@@ -755,6 +832,30 @@ strong {
 .c-light {
   color: #dfdfdf;
 }
+.h1 {
+  padding-bottom: 0.3em;
+  font-size: 2em;
+  line-height: 1.2;
+}
+.h2 {
+  padding-bottom: 0.3em;
+  font-size: 1.75em;
+  line-height: 1.225;
+}
+.h3 {
+  font-size: 1.5em;
+  line-height: 1.43;
+}
+.h4 {
+  font-size: 1.25em;
+}
+.h5 {
+  font-size: 1em;
+}
+.h6 {
+  font-size: 1em;
+  color: #777;
+}
 .hljs {
   padding: 0;
   width: 100%;
@@ -783,7 +884,7 @@ pre {
 .relative {
   position: relative;
 }
-@media all and (max-width: 720px) {
+@media all and (max-width: 768px) {
   body .site {
     max-width: 100%;
   }

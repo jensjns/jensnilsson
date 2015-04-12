@@ -7,12 +7,13 @@ block styles
     //link(rel='stylesheet', href='/scripts/lib/leaflet-0.7.3/leaflet.css')
 
 block content
-    div.panel-white.relative.mb16
-        img.round(src="#{data.profileImage.sizes.thumbnail}")
-        div.mb3.markdown
-            div.ph2
-                div.markdown-body !{marked(data.profileDescription)}
-        p #{data.email}
-        each socialLink in data.socialLinks
-            p
-                a(href="#{socialLink.url}") #{socialLink.label}
+    article.panel-white.relative.mb16.pt3.pb4
+        header.content-width.mha.ph2.center-text
+            img.round(src="#{data.profileImage.sizes.thumbnail}")
+            h1.serif.bold.center-text.ph2
+                span.c-dark-gray #{data.displayName}
+            if (data.email)
+                div.mb1
+                    #[span.octicon.octicon-mail.c-light] #[a(href="mailto:#{data.email}") #{data.email}]
+        div.mt3
+            div.ph2.markdown-body !{marked(data.profileDescription)}

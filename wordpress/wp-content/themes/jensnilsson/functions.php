@@ -67,7 +67,6 @@ function get_full_author_profile( $author_id, $update_transient = false ) {
         $fields = array(
             array('display_name', 'displayName'),
             array('user_nicename', 'niceName'),
-            array('user_email', 'email')
         );
 
         $custom_fields = array(
@@ -75,6 +74,9 @@ function get_full_author_profile( $author_id, $update_transient = false ) {
             array('social_links', 'socialLinks'),
             array('profile_description', 'profileDescription'),
             array('instagram_user_id', 'instagramUserId'),
+            array('website', 'website'),
+            array('location', 'location'),
+            array('public_email', 'email'),
         );
 
         // get built-in author meta

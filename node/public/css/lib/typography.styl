@@ -3,6 +3,7 @@
 
 $serif = 'Playfair Display', serif
 $sans-serif = 'Open Sans', sans-serif
+$sans-serif-alt = 'Montserrat'
 
 
 .serif
@@ -10,6 +11,9 @@ $sans-serif = 'Open Sans', sans-serif
     font-weight 400
 .sans-serif
     font-family $sans-serif
+    font-weight 400
+.sans-serif-alt
+    font-family $sans-serif-alt
     font-weight 400
 
 .bold
@@ -28,3 +32,27 @@ strong
 for c in colors
     .c-{c}
         color colors[c]
+
+.h1
+    padding-bottom 0.3em
+    font-size 2em
+    line-height 1.2
+
+.h2
+    padding-bottom 0.3em
+    font-size 1.75em
+    line-height 1.225
+
+.h3
+    font-size 1.5em
+    line-height 1.43
+
+.h4
+    font-size 1.25em
+
+.h5
+    font-size 1em
+
+.h6
+    font-size 1em
+    color #777
