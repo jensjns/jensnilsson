@@ -752,6 +752,7 @@ body.gradient-bg:before {
 body .site {
   width: 1080px;
   max-width: 90%;
+  display: block;
 }
 pre,
 code {

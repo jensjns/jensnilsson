@@ -5,16 +5,18 @@ html(style="background-image:url('#{data.siteSettings.backgroundImage.sizes['128
             title #{data.pageMeta.title}
         else
             title Jens Nilsson
-        link(rel='stylesheet' href='/static/css/style.min.css?v=20150412-1' type='text/css')
-        link(rel='stylesheet' href='http://fonts.googleapis.com/css?family=Playfair+Display:400,700|Open+Sans:400italic,400,700' type='text/css')
-        link(rel='stylesheet' href='/static/js/lib/Swiper-3.0.6/dist/css/swiper.min.css' type='text/css')
         meta(name='viewport' content="width=device-width, initial-scale=1")
+        style.
+            .site {
+                display: none;
+            }
         block styles
 
     body.mv8
         div.site.mha
             block content
 
+        script(data-main='/static/js/loader-main' src='/static/js/lib/require.js')
         if (data.siteSettings && data.siteSettings.googleAnalytics)
             script.
                 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -23,5 +25,4 @@ html(style="background-image:url('#{data.siteSettings.backgroundImage.sizes['128
                 })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
                 ga('create', '#{data.siteSettings.googleAnalytics}', 'auto');
                 ga('send', 'pageview');
-        script(data-main='/static/js/loader-main' src='/static/js/lib/require.js')
         block scripts
