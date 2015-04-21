@@ -42,6 +42,8 @@ require(['hljs', 'swiper', 'mapbox'], function(hljs, Swiper, L) {
             if( parsedJSONData.features.length ) {
                 map.fitBounds(featureLayer.getBounds());
             }
+
+            map.scrollWheelZoom.disable();
         }
     }
 
