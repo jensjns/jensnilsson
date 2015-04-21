@@ -30,6 +30,9 @@ article.panel-white.mb16.relative
                 if (contentBlock.blockType == 'image')
                     div.unit-1of1
                         img(src="#{contentBlock[contentBlock.blockType].sizes['1080']}" class="unit-1of1")
+                if (contentBlock.blockType == 'geojson')
+                    div.unit-1of1
+                        div.mapbox-map(data-geojson="#{contentBlock[contentBlock.blockType]}" data-access-token="#{data.siteSettings.mapboxAccessToken}" data-map-id="#{data.siteSettings.mapboxMapId}")
     footer.pb4
         div.ph2
             div.content-width.mha

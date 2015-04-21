@@ -885,6 +885,9 @@ pre {
 .relative {
   position: relative;
 }
+.mapbox-map {
+  height: 500px;
+}
 @media all and (max-width: 768px) {
   body .site {
     max-width: 100%;

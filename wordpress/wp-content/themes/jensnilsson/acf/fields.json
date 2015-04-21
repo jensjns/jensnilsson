@@ -93,6 +93,50 @@
                 "max_height": "",
                 "max_size": "",
                 "mime_types": ""
+            },
+            {
+                "key": "field_553562ce7e7fe",
+                "label": "MapBox API access token",
+                "name": "mapbox_api_access_token",
+                "prefix": "",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": "",
+                "readonly": 0,
+                "disabled": 0
+            },
+            {
+                "key": "field_553562ed7e7ff",
+                "label": "MapBox Map ID",
+                "name": "mapbox_map_id",
+                "prefix": "",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": "",
+                "readonly": 0,
+                "disabled": 0
             }
         ],
         "location": [
@@ -292,6 +336,34 @@
                         ],
                         "min": "",
                         "max": ""
+                    },
+                    {
+                        "key": "553560bd2fc27",
+                        "name": "geojson",
+                        "label": "geoJSON Data",
+                        "display": "row",
+                        "sub_fields": [
+                            {
+                                "key": "field_553560cc2fc28",
+                                "label": "geoJSON",
+                                "name": "geojson",
+                                "prefix": "",
+                                "type": "mapbox_geojson",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "mapbox_access_token": "pk.eyJ1IjoiamVuc25pbHNzb24iLCJhIjoiNVo4bXZ4dyJ9.xaolYAwWL8jhmJsZz17toA",
+                                "mapbox_map_id": "jensnilsson.iad26bb7",
+                                "height": 400
+                            }
+                        ],
+                        "min": "",
+                        "max": ""
                     }
                 ]
             }
@@ -302,6 +374,39 @@
                     "param": "post_type",
                     "operator": "==",
                     "value": "post"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": [
+            "the_content",
+            "excerpt",
+            "custom_fields",
+            "discussion",
+            "comments",
+            "revisions",
+            "author",
+            "format",
+            "page_attributes",
+            "featured_image",
+            "tags",
+            "send-trackbacks"
+        ]
+    },
+    {
+        "key": "group_552e891e21646",
+        "title": "Project",
+        "fields": [],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "project"
                 }
             ]
         ],

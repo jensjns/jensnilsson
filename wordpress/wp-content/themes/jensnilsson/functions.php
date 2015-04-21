@@ -226,6 +226,8 @@ function apply_site_settings( $obj ) {
         'googleAnalytics' => get_field( 'google_analytics_tracking_code', 'options' ),
         'disqusShortname' => get_field( 'disqus_shortname', 'options' ),
         'backgroundImage' => get_field( 'background_image', 'options' ),
+        'mapboxAccessToken' => get_field( 'mapbox_api_access_token', 'options' ),
+        'mapboxMapId' => get_field( 'mapbox_map_id', 'options' ),
     );
 }
 add_filter( 'apply-site-settings', 'apply_site_settings', 10, 1 );
