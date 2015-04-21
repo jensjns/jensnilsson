@@ -20,3 +20,4 @@ node/node_modules/
 node/configs/*.js
 node/config.js
 node/npm-debug.log
+version.txt
