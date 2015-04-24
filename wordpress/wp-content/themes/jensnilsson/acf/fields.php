@@ -209,7 +209,7 @@ register_field_group(array (
                     'key' => '55145fb81b9e5',
                     'name' => 'gallery',
                     'label' => 'Image Gallery',
-                    'display' => 'row',
+                    'display' => 'table',
                     'sub_fields' => array (
                         array (
                             'key' => 'field_551460015bff1',
@@ -245,7 +245,7 @@ register_field_group(array (
                     'key' => '551460685bff3',
                     'name' => 'markdown',
                     'label' => 'Markdown Content',
-                    'display' => 'row',
+                    'display' => 'table',
                     'sub_fields' => array (
                         array (
                             'key' => 'field_551460775bff4',
@@ -277,7 +277,7 @@ register_field_group(array (
                     'key' => '5516a3350697d',
                     'name' => 'code',
                     'label' => 'Markdown Code',
-                    'display' => 'row',
+                    'display' => 'table',
                     'sub_fields' => array (
                         array (
                             'key' => 'field_5516a35c0697e',
@@ -309,7 +309,7 @@ register_field_group(array (
                     'key' => '5517d9b3b5ef5',
                     'name' => 'image',
                     'label' => 'Wide Image',
-                    'display' => 'row',
+                    'display' => 'table',
                     'sub_fields' => array (
                         array (
                             'key' => 'field_5517d9c4b5ef6',
@@ -344,7 +344,7 @@ register_field_group(array (
                     'key' => '553560bd2fc27',
                     'name' => 'geojson',
                     'label' => 'geoJSON Data',
-                    'display' => 'row',
+                    'display' => 'table',
                     'sub_fields' => array (
                         array (
                             'key' => 'field_553560cc2fc28',
