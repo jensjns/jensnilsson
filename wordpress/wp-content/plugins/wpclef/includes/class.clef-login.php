@@ -12,6 +12,8 @@ class ClefLogin {
     }
 
     public function initialize_hooks() {
+        add_action('init', array($this, 'initialize_state_on_login_page'));
+
         // Authenticate with Clef is there is a valid OAuth code present
         add_action('authenticate', array($this, 'authenticate_clef'), 10, 3);
 
@@ -88,12 +90,14 @@ class ClefLogin {
         return $redirect_to;
     }
 
-    public function validate_invite() {
+    public function validate_invite($message) {
         $invite_code = ClefUtils::isset_GET('clef_invite_code');
         $invite_email = base64_decode(ClefUtils::isset_GET('clef_invite_id'));
         $error = $this->validate_invite_code($invite_code, $invite_email);
         if ($invite_code && $error) {
             return '<div id="login_error">' . $error . '</div>';
+        } else {
+            return $message;
         }
     }
 
@@ -290,6 +294,8 @@ class ClefLogin {
                 $info = ClefUtils::exchange_oauth_code_for_info($_REQUEST['code'], $this->settings);
             } catch (LoginException $e) {
                 return new WP_Error('clef', $e->getMessage());
+            } catch (ClefStateException $e) {
+                return new WP_Error('clef', $e->getMessage());
             }
 
             $clef_id = $info->id;
@@ -420,6 +426,12 @@ class ClefLogin {
         }
 
         return $url;
+    }
+
+    public function initialize_state_on_login_page() {
+        if (in_array($GLOBALS['pagenow'], array('wp-login.php', 'wp-register.php'))) {
+            ClefUtils::initialize_state();
+        }
     }
 
     public static function start($settings) {
