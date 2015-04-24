@@ -222,13 +222,14 @@ add_filter( 'apply-main-menu', 'apply_main_menu', 10, 1 );
 
 // decorates the passed object with the sites global settings.
 function apply_site_settings( $obj ) {
-    $obj->siteSettings = array(
-        'googleAnalytics' => get_field( 'google_analytics_tracking_code', 'options' ),
-        'disqusShortname' => get_field( 'disqus_shortname', 'options' ),
-        'backgroundImage' => get_field( 'background_image', 'options' ),
-        'mapboxAccessToken' => get_field( 'mapbox_api_access_token', 'options' ),
-        'mapboxMapId' => get_field( 'mapbox_map_id', 'options' ),
-    );
+    $obj->siteSettings = new stdClass();
+    $obj->siteSettings->googleAnalytics = get_field( 'google_analytics_tracking_code', 'options' );
+    $obj->siteSettings->disqusShortname = get_field( 'disqus_shortname', 'options' );
+    $obj->siteSettings->backgroundImage = get_field( 'background_image', 'options' );
+    $obj->siteSettings->mapboxAccessToken = get_field( 'mapbox_api_access_token', 'options' );
+    $obj->siteSettings->mapboxMapId = get_field( 'mapbox_map_id', 'options' );
+
+    apply_filters('apply-feed-links', $obj->siteSettings);
 }
 add_filter( 'apply-site-settings', 'apply_site_settings', 10, 1 );
 
@@ -239,3 +240,12 @@ function apply_page_meta($obj) {
     );
 }
 add_filter( 'apply-page-meta', 'apply_page_meta', 10, 1);
+
+function apply_feed_links( $obj ) {
+    $obj->feeds = new stdClass();
+    $obj->feeds->rdf = get_bloginfo('rdf_url');
+    $obj->feeds->rss = get_bloginfo('rss_url');
+    $obj->feeds->rss2 = get_bloginfo('rss2_url');
+    $obj->feeds->atom = get_bloginfo('atom_url');
+}
+add_filter( 'apply-feed-links', 'apply_feed_links', 10, 1);
