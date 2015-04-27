@@ -1,3 +1,10 @@
+mixin taglist(list, cssClass, sep)
+    - var lastIndex = list.length - 1
+    each tag, index in list
+        <a class="#{cssClass}" href="#{tag.permalink}">#{tag.name}</a>
+        if index < lastIndex
+            !{sep}
+
 article.panel-white.mb16.relative
     header.mb4.c-dark-gray
         if (post.heroImage)
@@ -37,7 +44,12 @@ article.panel-white.mb16.relative
         div.ph2
             div.content-width.mha
                 if (single)
+                    ul.meta.c-light-gray.sans-serif.text-small.stacked-octicons.list-clean.mv3.ph0
+                        li.mb1 #[span.octicon.octicon-pencil.mr1] #[span #{post.author.displayName}]
+                        li.mb1 #[span.octicon.octicon-clock.mr1] #[time(datetime=post.postDate) !{moment(post.postDate).format('YYYY-MM-DD')}]
+                        if (post.tag.length)
+                            li.mb1 #[span.octicon.octicon-tag.mr1] #[+taglist(post.tag, "c-light-gray hover-c-light-blue", ", ")]
                     include disqus
                 else
                     div.center-text
-                        a.serif.c-dark-gray.no-dec.bold(href="#{post.permalink}#disqus_thread") Comment on this article
+                        a.sans-serif.c-dark-gray.no-dec.bold.h3.hover-c-light-blue(href="#{post.permalink}#disqus_thread") Comment on this article

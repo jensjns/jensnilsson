@@ -1,3 +1,5 @@
+@require 'settings'
+
 html
     font-size 16px
     background no-repeat center center fixed
@@ -7,16 +9,6 @@ html
     background-size cover
 
 body
-    &.gradient-bg
-        &:before
-            @extend .panel-light-blue-to-dark-blue
-            content ''
-            position fixed
-            top 0
-            right 0
-            bottom 0
-            left 0
-            z-index -1
     .site
         width 1080px
         max-width 90%

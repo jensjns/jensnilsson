@@ -32,6 +32,10 @@ strong
 for c in colors
     .c-{c}
         color colors[c]
+    .hover-c-{c}
+        transition color .1s
+        &:hover
+            color colors[c]
 
 .h1
     padding-bottom 0.3em
@@ -56,3 +60,9 @@ for c in colors
 .h6
     font-size 1em
     color #777
+
+.text-small
+    font-size 0.8em
+
+.uppercase
+    text-transform uppercase

@@ -133,6 +133,7 @@ function filter_post( $post ) {
         array(null, 'title', get_the_title()),
         array(null, 'author', get_full_author_profile( $post->post_author )),
         array(null, 'category', get_the_category( $post->ID )),
+        array(null, 'tag', apply_filters('tags-filter', get_the_tags( $post->ID ))),
         array(null, 'template', 'post')
     );
 
@@ -198,6 +199,21 @@ function filter_page( $post ) {
     return $public_post;
 }
 add_filter( 'page-filter', 'filter_page', 10, 1 );
+
+function filter_tags( $tags ) {
+    foreach( $tags as $index => $tag ) {
+       $tags[$index] = apply_filters('tag-filter', $tag);
+    }
+    return $tags;
+}
+add_filter( 'tags-filter', 'filter_tags', 10, 1);
+
+function filter_tag( $tag ) {
+    $tag->id = $tag->term_id;
+    $tag->permalink = get_tag_link($tag->id);
+    return $tag;
+}
+add_filter( 'tag-filter', 'filter_tag', 10, 1 );
 
 
 // filter for content_blocks field
