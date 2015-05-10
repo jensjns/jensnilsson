@@ -977,6 +977,11 @@ pre {
   height: 500px;
 }
 @media all and (max-width: 768px) {
+  .mapbox-map {
+    height: 300px;
+  }
+}
+@media all and (max-width: 768px) {
   body .site {
     max-width: 100%;
   }

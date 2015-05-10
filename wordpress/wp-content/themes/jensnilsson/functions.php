@@ -201,6 +201,9 @@ function filter_page( $post ) {
 add_filter( 'page-filter', 'filter_page', 10, 1 );
 
 function filter_tags( $tags ) {
+
+    $tags = is_array($tags) ? $tags : array();
+
     foreach( $tags as $index => $tag ) {
        $tags[$index] = apply_filters('tag-filter', $tag);
     }
