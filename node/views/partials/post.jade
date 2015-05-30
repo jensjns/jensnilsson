@@ -16,7 +16,8 @@ article.panel-white.mb16.relative
             div
                 img.round(src="#{post.author.profileImage.sizes.thumbnail}")
     div.mb4
-        each contentBlock in post.contentBlocks
+        - var contentBlocks = (!single) ? [post.contentBlocks[0]] : post.contentBlocks;
+        each contentBlock in contentBlocks
             div.mb3(class="#{contentBlock.blockType}")
                 if (contentBlock.blockType == 'markdown')
                     div.ph2
@@ -52,4 +53,4 @@ article.panel-white.mb16.relative
                     include disqus
                 else
                     div.center-text
-                        a.sans-serif.c-dark-gray.no-dec.bold.h3.hover-c-light-blue(href="#{post.permalink}#disqus_thread") Comment on this article
+                        a.sans-serif.c-dark.no-dec.bold.h5.hover-c-white.oa2.o-dark.ph2.pv1.hover-panel-dark.uc.ib(href="#{post.permalink}") Read more

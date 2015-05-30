@@ -1,3 +1,4 @@
+@require 'settings'
 
 /*
 
@@ -17,13 +18,13 @@
 */
 
 t(rule, size, u)
-    {rule}-top (u ? unit(size, u) : size)
+    {rule}-top (u ? unit(size, u) : size) solid
 r(rule, size, u)
-    {rule}-right (u ? unit(size, u) : size)
+    {rule}-right (u ? unit(size, u) : size) solid
 b(rule, size, u)
-    {rule}-bottom (u ? unit(size, u) : size)
+    {rule}-bottom (u ? unit(size, u) : size) solid
 l(rule, size, u)
-    {rule}-left (u ? unit(size, u) : size)
+    {rule}-left (u ? unit(size, u) : size) solid
 v(rule, size, u)
     t(rule, size, u)
     b(rule, size, u)
@@ -31,9 +32,15 @@ h(rule, size, u)
     r(rule, size, u)
     l(rule, size, u)
 a(rule, size, u)
-    {rule} (u ? unit(size, u) : size)
+    {rule} (u ? unit(size, u) : size) solid
 
 outline(size)
     for n in a v h t r b l
-        .o{n}
+        .o{n}{size}
             n(border, size, 'px')
+
+outline(2)
+
+for c in colors
+    .o-{c}
+        border-color colors[c]

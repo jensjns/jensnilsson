@@ -3,6 +3,10 @@
 for c in colors
     .panel-{c}
         background-color colors[c]
+    .hover-panel-{c}
+        transition background-color .2s
+        &:hover
+            background-color colors[c]
 
 background-linear-gradient(startPoint, startColor, startInterval, endColor, endInterval, deprecatedWebkitStartPoint = false, deprecatedWebkitEndPoint = false)
     background-color startColor

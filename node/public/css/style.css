@@ -6,28 +6,82 @@
 .panel-dark-gray {
   background-color: #3e3f3a;
 }
+.hover-panel-dark-gray {
+  transition: background-color 0.2s;
+}
+.hover-panel-dark-gray:hover {
+  background-color: #3e3f3a;
+}
 .panel-light-gray {
+  background-color: #9c9c9c;
+}
+.hover-panel-light-gray {
+  transition: background-color 0.2s;
+}
+.hover-panel-light-gray:hover {
   background-color: #9c9c9c;
 }
 .panel-white {
   background-color: #fff;
 }
+.hover-panel-white {
+  transition: background-color 0.2s;
+}
+.hover-panel-white:hover {
+  background-color: #fff;
+}
 .panel-light-blue {
+  background-color: #01b2f1;
+}
+.hover-panel-light-blue {
+  transition: background-color 0.2s;
+}
+.hover-panel-light-blue:hover {
   background-color: #01b2f1;
 }
 .panel-blue {
   background-color: #00a7fa;
 }
+.hover-panel-blue {
+  transition: background-color 0.2s;
+}
+.hover-panel-blue:hover {
+  background-color: #00a7fa;
+}
 .panel-dark-blue {
+  background-color: #026ea8;
+}
+.hover-panel-dark-blue {
+  transition: background-color 0.2s;
+}
+.hover-panel-dark-blue:hover {
   background-color: #026ea8;
 }
 .panel-code-bg {
   background-color: #232323;
 }
+.hover-panel-code-bg {
+  transition: background-color 0.2s;
+}
+.hover-panel-code-bg:hover {
+  background-color: #232323;
+}
 .panel-dark {
   background-color: #1b1e22;
 }
+.hover-panel-dark {
+  transition: background-color 0.2s;
+}
+.hover-panel-dark:hover {
+  background-color: #1b1e22;
+}
 .panel-light {
+  background-color: #dfdfdf;
+}
+.hover-panel-light {
+  transition: background-color 0.2s;
+}
+.hover-panel-light:hover {
   background-color: #dfdfdf;
 }
 .pa0 {
@@ -838,7 +892,7 @@ strong {
   color: #3e3f3a;
 }
 .hover-c-dark-gray {
-  transition: color 0.1s;
+  transition: color 0.2s;
 }
 .hover-c-dark-gray:hover {
   color: #3e3f3a;
@@ -847,7 +901,7 @@ strong {
   color: #9c9c9c;
 }
 .hover-c-light-gray {
-  transition: color 0.1s;
+  transition: color 0.2s;
 }
 .hover-c-light-gray:hover {
   color: #9c9c9c;
@@ -856,7 +910,7 @@ strong {
   color: #fff;
 }
 .hover-c-white {
-  transition: color 0.1s;
+  transition: color 0.2s;
 }
 .hover-c-white:hover {
   color: #fff;
@@ -865,7 +919,7 @@ strong {
   color: #01b2f1;
 }
 .hover-c-light-blue {
-  transition: color 0.1s;
+  transition: color 0.2s;
 }
 .hover-c-light-blue:hover {
   color: #01b2f1;
@@ -874,7 +928,7 @@ strong {
   color: #00a7fa;
 }
 .hover-c-blue {
-  transition: color 0.1s;
+  transition: color 0.2s;
 }
 .hover-c-blue:hover {
   color: #00a7fa;
@@ -883,7 +937,7 @@ strong {
   color: #026ea8;
 }
 .hover-c-dark-blue {
-  transition: color 0.1s;
+  transition: color 0.2s;
 }
 .hover-c-dark-blue:hover {
   color: #026ea8;
@@ -892,7 +946,7 @@ strong {
   color: #232323;
 }
 .hover-c-code-bg {
-  transition: color 0.1s;
+  transition: color 0.2s;
 }
 .hover-c-code-bg:hover {
   color: #232323;
@@ -901,7 +955,7 @@ strong {
   color: #1b1e22;
 }
 .hover-c-dark {
-  transition: color 0.1s;
+  transition: color 0.2s;
 }
 .hover-c-dark:hover {
   color: #1b1e22;
@@ -910,7 +964,7 @@ strong {
   color: #dfdfdf;
 }
 .hover-c-light {
-  transition: color 0.1s;
+  transition: color 0.2s;
 }
 .hover-c-light:hover {
   color: #dfdfdf;
@@ -942,8 +996,13 @@ strong {
 .text-small {
   font-size: 0.8em;
 }
-.uppercase {
+.uppercase,
+.uc {
   text-transform: uppercase;
+}
+.lowercase,
+.lc {
+  text-transform: lowercase;
 }
 .hljs {
   padding: 0;
@@ -973,6 +1032,9 @@ pre {
 .relative {
   position: relative;
 }
+.ib {
+  display: inline-block;
+}
 .mapbox-map {
   height: 500px;
 }
@@ -988,4 +1050,54 @@ pre {
 }
 .list-clean {
   list-style-type: none;
+}
+.oa2 {
+  border: 2px solid;
+}
+.ov2 {
+  border-top: 2px solid;
+  border-bottom: 2px solid;
+}
+.oh2 {
+  border-right: 2px solid;
+  border-left: 2px solid;
+}
+.ot2 {
+  border-top: 2px solid;
+}
+.or2 {
+  border-right: 2px solid;
+}
+.ob2 {
+  border-bottom: 2px solid;
+}
+.ol2 {
+  border-left: 2px solid;
+}
+.o-dark-gray {
+  border-color: #3e3f3a;
+}
+.o-light-gray {
+  border-color: #9c9c9c;
+}
+.o-white {
+  border-color: #fff;
+}
+.o-light-blue {
+  border-color: #01b2f1;
+}
+.o-blue {
+  border-color: #00a7fa;
+}
+.o-dark-blue {
+  border-color: #026ea8;
+}
+.o-code-bg {
+  border-color: #232323;
+}
+.o-dark {
+  border-color: #1b1e22;
+}
+.o-light {
+  border-color: #dfdfdf;
 }
