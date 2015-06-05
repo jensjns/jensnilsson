@@ -9,7 +9,7 @@ block styles
 block content
     article.panel-white.relative.mb16.pt3.pb4
         header.mha.ph2.center-text
-            img.round(src="#{data.profileImage.sizes.thumbnail}")
+            img.round(src="#{data.profileImage.sizes.thumbnail}" alt="#{data.profileImage.alt}")
             h1.serif.bold.center-text.ph2
                 span.c-dark-gray #{data.displayName}
             if (data.email)

@@ -8,13 +8,13 @@ mixin taglist(list, cssClass, sep)
 article.panel-white.mb16.relative
     header.mb4.c-dark-gray
         if (post.heroImage)
-            img(src="#{post.heroImage.sizes.wide}" class="unit unit-1of1 mb3")
+            img(src="#{post.heroImage.sizes.wide}" class="unit unit-1of1 mb3" alt="#{post.heroImage.alt}")
         h1.serif.bold.center-text.ph2
             a.c-dark-gray(href="#{post.permalink}") #{post.title}
         p.center-text.sans-serif.c-light-gray #{post.author.displayName} on #[time(datetime=post.postDate) !{moment(post.postDate).format('MMMM Do, YYYY')}]
         a.author(href="#{post.author.url}")
             div
-                img.round(src="#{post.author.profileImage.sizes.thumbnail}")
+                img.round(src="#{post.author.profileImage.sizes.thumbnail}" alt="#{post.author.profileImage.alt}")
     div.mb4
         - var contentBlocks = (!single) ? [post.contentBlocks[0]] : post.contentBlocks;
         each contentBlock in contentBlocks
@@ -30,14 +30,14 @@ article.panel-white.mb16.relative
                             each image in contentBlock[contentBlock.blockType]
                                 div.swiper-slide
                                     //img.unit-1of1(src="#{image.sizes['1080.16/9']}")
-                                    img.unit-1of1.swiper-lazy(data-src="#{image.sizes['1080.16/9']}")
+                                    img.unit-1of1.swiper-lazy(data-src="#{image.sizes['1080.16/9']}" alt="#{image.alt}")
                                     div.swiper-lazy-preloader
                         div.swiper-pagination.swiper-pagination-white
                         div.swiper-button-next.swiper-button-white
                         div.swiper-button-prev.swiper-button-white
                 if (contentBlock.blockType == 'image')
                     div.unit-1of1
-                        img(src="#{contentBlock[contentBlock.blockType].sizes['1080']}" class="unit-1of1")
+                        img.unit-1of1(src="#{contentBlock[contentBlock.blockType].sizes['1080']}" alt="#{contentBlock[contentBlock.blockType].alt}")
                 if (contentBlock.blockType == 'geojson')
                     div.unit-1of1
                         div.mapbox-map(data-geojson="#{contentBlock[contentBlock.blockType]}" data-access-token="#{data.siteSettings.mapboxAccessToken}" data-map-id="#{data.siteSettings.mapboxMapId}")
