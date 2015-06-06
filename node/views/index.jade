@@ -1,11 +1,5 @@
 extends layout
 
-block scripts
-    //script(data-main='/scripts/loader-main' src='/scripts/lib/require.js')
-
-block styles
-    //link(rel='stylesheet', href='/scripts/lib/leaflet-0.7.3/leaflet.css')
-
 block content
     each post in data.posts
         if (post.contentBlocks)
