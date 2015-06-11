@@ -5,14 +5,14 @@ mixin taglist(list, cssClass, sep)
         if index < lastIndex
             !{sep}
 
-article.panel-white.mb16.relative
+article.panel-white.mb16.relative(itemscope itemtype="http://schema.org/Article")
     header.mb4.c-dark-gray
         if (post.heroImage)
             img(src="#{post.heroImage.sizes.wide}" class="unit unit-1of1 mb3" alt="#{post.heroImage.alt}")
-        h1.serif.bold.center-text.ph2
-            a.c-dark-gray(href="#{post.permalink}") #{post.title}
+        h1.serif.bold.center-text.ph2(itemprop="name")
+            a.c-dark-gray(href="#{post.permalink}" itemprop="url") #{post.title}
         p.center-text.sans-serif.c-light-gray #[a(href="#{post.author.url}") #{post.author.displayName}] on #[time(datetime=post.postDate) !{moment(post.postDate).format('MMMM Do, YYYY')}]
-    div.mb4
+    div.mb4(itemprop="articleBody")
         - var contentBlocks = (!single) ? [post.contentBlocks[0]] : post.contentBlocks;
         each contentBlock in contentBlocks
             div.mb3(class="#{contentBlock.blockType}")
@@ -44,9 +44,9 @@ article.panel-white.mb16.relative
                 if (single)
                     ul.meta.c-light-gray.sans-serif.text-small.stacked-octicons.list-clean.mv3.ph0
                         li.mb1 #[span.octicon.octicon-pencil.mr1] #[span #{post.author.displayName}]
-                        li.mb1 #[span.octicon.octicon-clock.mr1] #[time(datetime=post.postDate) !{moment(post.postDate).format('YYYY-MM-DD')}]
+                        li.mb1 #[span.octicon.octicon-clock.mr1] #[time(datetime=post.postDate itemprop="datePublished") !{moment(post.postDate).format('YYYY-MM-DD')}]
                         if (post.tag.length)
-                            li.mb1 #[span.octicon.octicon-tag.mr1] #[+taglist(post.tag, "c-light-gray hover-c-light-blue", ", ")]
+                            li.mb1(itemprop="keywords") #[span.octicon.octicon-tag.mr1] #[+taglist(post.tag, "c-light-gray hover-c-light-blue", ", ")]
                     include disqus
                 else
                     div.center-text
