@@ -15,6 +15,8 @@ wordpress/wp-content/plugins/advanced-custom-fields-pro/
 wordpress/wp-content/plugins/acf-mapbox-geojson-field/
 wordpress/wp-content/plugins/acf-markdown-field/
 wordpress/wp-content/themes/twenty*/
+wordpress/wp-content/plugins/akismet/
+wordpress/wp-content/plugins/hello.php
 .DS_Store
 node_modules/
 node/node_modules/
