@@ -16,6 +16,7 @@ Adds a markdown-field, which is really just a textarea with some extra tools and
 = Compatibility =
 
 This ACF field type is compatible with:
+
 * ACF 5
 * ACF 4
 
@@ -38,6 +39,9 @@ If you want the latest development version of this plugin it is available over a
 
 == Changelog ==
 
+= 1.1.2 =
+* Fixed a bug that caused the "Add Media" button to not work properly.
+
 = 1.1.1 =
 * Fixed selector for add media button.
 
@@ -48,6 +52,9 @@ If you want the latest development version of this plugin it is available over a
 * Initial Release.
 
 == Upgrade Notice ==
+
+= 1.1.2 =
+* Fixed a bug that caused the "Add Media" button to not work properly.
 
 = 1.1.1 =
 * Fixed selector for add media button.
