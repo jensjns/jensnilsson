@@ -1,5 +1,13 @@
 extends layout
 
+block og
+    meta(property="og:title" content="#{data.title}")
+    meta(property="og:url" content="#{data.permalink}")
+    meta(property="og:description" content="#{data.contentBlocks[0][data.contentBlocks[0].blockType]}")
+    meta(property="og:image" content="#{data.heroImage.url}")
+    meta(property="og:image:width" content="#{data.heroImage.width}")
+    meta(property="og:image:height" content="#{data.heroImage.height}")
+
 block content
     div(itemscope itemtype="http://schema.org/Blog")
         - var post = data
