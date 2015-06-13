@@ -1,6 +1,7 @@
 extends layout
 
 block content
-    each post in data.posts
-        if (post.contentBlocks)
-            include partials/post
+    div(itemscope itemtype="http://schema.org/Blog")
+        each post in data.posts
+            if (post.contentBlocks)
+                include partials/post

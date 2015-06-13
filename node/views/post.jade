@@ -1,6 +1,7 @@
 extends layout
 
 block content
-    - var post = data
-    - var single = true
-    include partials/post
+    div(itemscope itemtype="http://schema.org/Blog")
+        - var post = data
+        - var single = true
+        include partials/post
