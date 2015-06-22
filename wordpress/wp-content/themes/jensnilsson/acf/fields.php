@@ -1,7 +1,7 @@
 <?php
-if( function_exists('register_field_group') ):
+if( function_exists('acf_add_local_field_group') ):
 
-register_field_group(array (
+acf_add_local_field_group(array (
     'key' => 'group_5517d20ecbef3',
     'title' => 'Options',
     'fields' => array (
@@ -9,7 +9,6 @@ register_field_group(array (
             'key' => 'field_5517d2122ac76',
             'label' => 'Google Analytics tracking code',
             'name' => 'google_analytics_tracking_code',
-            'prefix' => '',
             'type' => 'text',
             'instructions' => '',
             'required' => 0,
@@ -31,7 +30,6 @@ register_field_group(array (
             'key' => 'field_551826fdf12ed',
             'label' => 'Disqus Shortname',
             'name' => 'disqus_shortname',
-            'prefix' => '',
             'type' => 'text',
             'instructions' => '',
             'required' => 0,
@@ -53,7 +51,6 @@ register_field_group(array (
             'key' => 'field_5526c4eba666d',
             'label' => 'Instagram Client id',
             'name' => 'instagram_client_id',
-            'prefix' => '',
             'type' => 'text',
             'instructions' => '',
             'required' => 0,
@@ -75,7 +72,6 @@ register_field_group(array (
             'key' => 'field_5517dd462e505',
             'label' => 'Background Image',
             'name' => 'background_image',
-            'prefix' => '',
             'type' => 'image',
             'instructions' => '',
             'required' => 0,
@@ -100,7 +96,6 @@ register_field_group(array (
             'key' => 'field_553562ce7e7fe',
             'label' => 'MapBox API access token',
             'name' => 'mapbox_api_access_token',
-            'prefix' => '',
             'type' => 'text',
             'instructions' => '',
             'required' => 0,
@@ -122,7 +117,6 @@ register_field_group(array (
             'key' => 'field_553562ed7e7ff',
             'label' => 'MapBox Map ID',
             'name' => 'mapbox_map_id',
-            'prefix' => '',
             'type' => 'text',
             'instructions' => '',
             'required' => 0,
@@ -158,7 +152,7 @@ register_field_group(array (
     'hide_on_screen' => '',
 ));
 
-register_field_group(array (
+acf_add_local_field_group(array (
     'key' => 'group_5513031a288d0',
     'title' => 'Post',
     'fields' => array (
@@ -166,7 +160,6 @@ register_field_group(array (
             'key' => 'field_5513035a605b8',
             'label' => 'Hero Image',
             'name' => 'hero_image',
-            'prefix' => '',
             'type' => 'image',
             'instructions' => '',
             'required' => 0,
@@ -191,7 +184,6 @@ register_field_group(array (
             'key' => 'field_55145fab5bfef',
             'label' => 'Content blocks',
             'name' => 'content_blocks',
-            'prefix' => '',
             'type' => 'flexible_content',
             'instructions' => '',
             'required' => 0,
@@ -215,7 +207,6 @@ register_field_group(array (
                             'key' => 'field_551460015bff1',
                             'label' => 'Gallery',
                             'name' => 'gallery',
-                            'prefix' => '',
                             'type' => 'gallery',
                             'instructions' => '',
                             'required' => 0,
@@ -251,7 +242,6 @@ register_field_group(array (
                             'key' => 'field_551460775bff4',
                             'label' => 'Markdown',
                             'name' => 'markdown',
-                            'prefix' => '',
                             'type' => 'markdown',
                             'instructions' => '',
                             'required' => 0,
@@ -283,7 +273,6 @@ register_field_group(array (
                             'key' => 'field_5516a35c0697e',
                             'label' => 'Code',
                             'name' => 'code',
-                            'prefix' => '',
                             'type' => 'markdown',
                             'instructions' => '',
                             'required' => 0,
@@ -315,7 +304,6 @@ register_field_group(array (
                             'key' => 'field_5517d9c4b5ef6',
                             'label' => 'Image',
                             'name' => 'image',
-                            'prefix' => '',
                             'type' => 'image',
                             'instructions' => '',
                             'required' => 0,
@@ -350,7 +338,6 @@ register_field_group(array (
                             'key' => 'field_553560cc2fc28',
                             'label' => 'geoJSON',
                             'name' => 'geojson',
-                            'prefix' => '',
                             'type' => 'mapbox_geojson',
                             'instructions' => '',
                             'required' => 0,
@@ -379,6 +366,13 @@ register_field_group(array (
                 'value' => 'post',
             ),
         ),
+        array (
+            array (
+                'param' => 'post_type',
+                'operator' => '==',
+                'value' => 'how-to',
+            ),
+        ),
     ),
     'menu_order' => 0,
     'position' => 'normal',
@@ -400,42 +394,7 @@ register_field_group(array (
     ),
 ));
 
-register_field_group(array (
-    'key' => 'group_552e891e21646',
-    'title' => 'Project',
-    'fields' => array (
-    ),
-    'location' => array (
-        array (
-            array (
-                'param' => 'post_type',
-                'operator' => '==',
-                'value' => 'project',
-            ),
-        ),
-    ),
-    'menu_order' => 0,
-    'position' => 'normal',
-    'style' => 'default',
-    'label_placement' => 'top',
-    'instruction_placement' => 'label',
-    'hide_on_screen' => array (
-        0 => 'the_content',
-        1 => 'excerpt',
-        2 => 'custom_fields',
-        3 => 'discussion',
-        4 => 'comments',
-        5 => 'revisions',
-        6 => 'author',
-        7 => 'format',
-        8 => 'page_attributes',
-        9 => 'featured_image',
-        10 => 'tags',
-        11 => 'send-trackbacks',
-    ),
-));
-
-register_field_group(array (
+acf_add_local_field_group(array (
     'key' => 'group_5516d7f3a9072',
     'title' => 'User',
     'fields' => array (
@@ -443,7 +402,6 @@ register_field_group(array (
             'key' => 'field_5516d7f7c3774',
             'label' => 'Profile Image',
             'name' => 'profile_image',
-            'prefix' => '',
             'type' => 'image',
             'instructions' => '',
             'required' => 0,
@@ -468,7 +426,6 @@ register_field_group(array (
             'key' => 'field_551fe81e97317',
             'label' => 'Profile Description',
             'name' => 'profile_description',
-            'prefix' => '',
             'type' => 'markdown',
             'instructions' => '',
             'required' => 0,
@@ -490,7 +447,6 @@ register_field_group(array (
             'key' => 'field_551fe83f97318',
             'label' => 'Social Links',
             'name' => 'social_links',
-            'prefix' => '',
             'type' => 'repeater',
             'instructions' => '',
             'required' => 0,
@@ -509,7 +465,6 @@ register_field_group(array (
                     'key' => 'field_551fe85c97319',
                     'label' => 'Label',
                     'name' => 'label',
-                    'prefix' => '',
                     'type' => 'text',
                     'instructions' => '',
                     'required' => 0,
@@ -531,7 +486,6 @@ register_field_group(array (
                     'key' => 'field_551fe8779731a',
                     'label' => 'URL',
                     'name' => 'url',
-                    'prefix' => '',
                     'type' => 'url',
                     'instructions' => '',
                     'required' => 0,
@@ -550,7 +504,6 @@ register_field_group(array (
             'key' => 'field_5526c4abefed3',
             'label' => 'Instagram User id',
             'name' => 'instagram_user_id',
-            'prefix' => '',
             'type' => 'text',
             'instructions' => '',
             'required' => 0,
@@ -572,7 +525,6 @@ register_field_group(array (
             'key' => 'field_552a46394d6fa',
             'label' => 'Location',
             'name' => 'location',
-            'prefix' => '',
             'type' => 'text',
             'instructions' => '',
             'required' => 0,
@@ -594,7 +546,6 @@ register_field_group(array (
             'key' => 'field_552a46584d6fb',
             'label' => 'Website',
             'name' => 'website',
-            'prefix' => '',
             'type' => 'text',
             'instructions' => '',
             'required' => 0,
@@ -616,7 +567,6 @@ register_field_group(array (
             'key' => 'field_552a467e4d6fc',
             'label' => 'Public email',
             'name' => 'public_email',
-            'prefix' => '',
             'type' => 'text',
             'instructions' => '',
             'required' => 0,

@@ -3,7 +3,7 @@
      * Template Name: Posts
      **/
 
-	function renderCategory($cat){
+	function renderCategory($cat) {
 	    $args = array(
 	    'numberposts' => '',
 	    'offset' => 0,
@@ -20,7 +20,7 @@
 	    $allCategories = array();
 
 	    $index = 0;
-	    foreach( $posts->posts as $item ){
+	    foreach( $posts->posts as $item ) {
 	    	$item->excerpt = get_field('excerpt',$item->ID);
 	    	$item->index = $index;
 	    	$item->img = get_field('images',$item->ID);

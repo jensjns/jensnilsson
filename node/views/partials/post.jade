@@ -8,8 +8,8 @@ mixin taglist(list, cssClass, sep)
 article.panel-white.mb16.relative(itemscope itemtype="http://schema.org/BlogPosting" itemprop="blogPost")
     header.mb4.c-dark-gray
         if (post.heroImage)
-            img(src="#{post.heroImage.sizes.wide}" class="unit unit-1of1 mb3" alt="#{post.heroImage.alt}")
-        h1.serif.bold.center-text.ph2(itemprop="headline")
+            img(src="#{post.heroImage.sizes.wide}" class="unit unit-1of1" alt="#{post.heroImage.alt}")
+        h1.serif.bold.center-text.ph2.unit.unit-1of1.mt3(itemprop="headline")
             a.c-dark-gray(href="#{post.permalink}" itemprop="url discussionUrl") #{post.title}
         p.center-text.sans-serif.c-light-gray
             #[a(href="#{post.author.url}") #{post.author.displayName}] on #[time(datetime=post.postDate) !{moment(post.postDate).format('MMMM Do, YYYY')}]

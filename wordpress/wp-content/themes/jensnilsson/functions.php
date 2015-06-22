@@ -27,7 +27,7 @@ function init() {
     );
 
     include 'acf/fields.php';
-    include 'post_types/project.php';
+    include 'post_types/how-to.php';
 }
 add_action('init', 'init');
 
@@ -151,47 +151,6 @@ function filter_post( $post ) {
     return $public_post;
 }
 add_filter( 'post-filter', 'filter_post', 10, 1 );
-
-// filter project post-type
-function filter_project( $post ) {
-    $public_post = new stdClass();
-
-    $public_attr = array(
-        array('ID', 'id'),
-        array('post_date', 'postDate'),
-        array('post_date_gmt', 'postDateGMT'),
-        array('post_title', 'postTitle'),
-        array('post_status', 'postStatus'),
-        array('post_name', 'postName'),
-        array('post_modified', 'postModified'),
-        array('post_modified_gmt', 'postModifiedGMT'),
-        array('post_parent', 'postParent'),
-        array('guid', 'guid'),
-        array('post_type', 'postType'),
-
-        array(null, 'permalink', get_permalink( $post->ID )),
-        array(null, 'content', get_field( 'content', $post->ID )),
-        array(null, 'contentType', 'markdown'),
-        array(null, 'title', get_the_title()),
-        array(null, 'author', get_full_author_profile( $post->post_author )),
-        array(null, 'category', get_the_category( $post->ID )),
-        array(null, 'template', 'project')
-    );
-
-    // filter down the post attributes
-    foreach( $public_attr as $attr ) {
-        if( $attr[0] == null ) {
-            $public_post->$attr[1] = $attr[2];
-        }
-        else {
-            $public_post->$attr[1] = $post->$attr[0];
-        }
-    }
-
-    //$public_post->menu = get_menu_json('main');
-    return $public_post;
-}
-add_filter( 'project-filter', 'filter_project', 10, 1 );
 
 // filter pages
 function filter_page( $post ) {
