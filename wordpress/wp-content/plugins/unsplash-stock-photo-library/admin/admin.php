@@ -201,87 +201,89 @@ function usp_settings_page(){ ?>
 
 
 function usp_upload_image(){
-
-   error_reporting(E_ALL|E_STRICT);
    
-	$nonce = $_POST["nonce"];
-	// Check our nonce, if they don't match then bounce!
-	if (! wp_verify_nonce( $nonce, 'usp_nonce' ))
-		die('Get Bounced!');
-	
-	
-   // Make tmp directory to temporarily store images
-   $dir = USP_PATH.'admin/tmp';
-   if(!is_dir($dir)){
-     mkdir($dir);
-   }
-   
-   
-   // Is directory writeable
-   if (!is_writable(USP_PATH.'admin/tmp/')) {
-       echo __('Unable to save image, check your server permissions.', USP_NAME);
-   }
-   
-	
-	// Get image variables
-	$img = Trim(stripslashes($_POST["image"])); // Image url
-	$desc = Trim(stripslashes($_POST["description"])); // image description
-	$tmp_path = USP_PATH.'admin/tmp/';	// Temp image path
-	$upload_path = USP_ADMIN_URL.'tmp/'; // Full url path for image upload
-	
-	
-	// Create temp. image variable
-   $tmp = 'image-'. rand() .'.jpg';
-   $tmp_img = $tmp_path .''.$tmp;   
-   
-   
-   // Generate temp. image 
-   
-   //$content = file_get_contents($img);
-   // Lets use cURL
-   $ch = curl_init();
-   curl_setopt($ch, CURLOPT_URL, $img);
-   curl_setopt($ch, CURLOPT_HEADER, 0);
-   curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-   curl_setopt($ch, CURLOPT_BINARYTRANSFER,1);
-   $picture = curl_exec($ch);
-   curl_close($ch);
-   
-   $saved_file = file_put_contents($tmp_img, $picture);   
-   
-   // Set default return value
-   $json = json_encode( 
-   	array(
-   		'error' => true,
-   		'msg' => __('Unable to save image, check your server permissions.', USP_NAME)
-		)
-   );
-   
-    // Was the temporary image able to be saved?
-   if ($saved_file) {   
+   if (current_user_can( 'edit_theme_options' )){
+      error_reporting(E_ALL|E_STRICT);
       
-      // Upload generated file to media library using media_sideload_image()
-      $file = media_sideload_image($upload_path.''.$tmp, 0, $desc);
-     
-      // Success JSON      
-      //echo __('File successfully uploaded to media library.', USP_NAME); 
+   	$nonce = $_POST["nonce"];
+   	// Check our nonce, if they don't match then bounce!
+   	if (! wp_verify_nonce( $nonce, 'usp_nonce' ))
+   		die('Get Bounced!');
+   	
+   	
+      // Make tmp directory to temporarily store images
+      $dir = USP_PATH.'admin/tmp';
+      if(!is_dir($dir)){
+        mkdir($dir);
+      }
+      
+      
+      // Is directory writeable
+      if (!is_writable(USP_PATH.'admin/tmp/')) {
+          echo __('Unable to save image, check your server permissions.', USP_NAME);
+      }
+      
+   	
+   	// Get image variables
+   	$img = Trim(stripslashes($_POST["image"])); // Image url
+   	$desc = Trim(stripslashes($_POST["description"])); // image description
+   	$tmp_path = USP_PATH.'admin/tmp/';	// Temp image path
+   	$upload_path = USP_ADMIN_URL.'tmp/'; // Full url path for image upload
+   	
+   	
+   	// Create temp. image variable
+      $tmp = 'image-'. rand() .'.jpg';
+      $tmp_img = $tmp_path .''.$tmp;   
+      
+      
+      // Generate temp. image 
+      
+      //$content = file_get_contents($img);
+      // Lets use cURL
+      $ch = curl_init();
+      curl_setopt($ch, CURLOPT_URL, $img);
+      curl_setopt($ch, CURLOPT_HEADER, 0);
+      curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+      curl_setopt($ch, CURLOPT_BINARYTRANSFER,1);
+      $picture = curl_exec($ch);
+      curl_close($ch);
+      
+      $saved_file = file_put_contents($tmp_img, $picture);   
+      
+      // Set default return value
       $json = json_encode( 
       	array(
-      		'error' => false,
-      		'msg' => __('File successfully uploaded to media library.', USP_NAME)
+      		'error' => true,
+      		'msg' => __('Unable to save image, check your server permissions.', USP_NAME)
    		)
       );
-            
-      // Delete the file we just uplaoded from the tmp dir.
-      if(file_exists($tmp_path.''.$tmp)){
-          unlink($tmp_path.''.$tmp);
-      }else{
-         echo __('Nothing to delete, file does not exist', USP_NAME);
-      }           
+      
+       // Was the temporary image able to be saved?
+      if ($saved_file) {   
+         
+         // Upload generated file to media library using media_sideload_image()
+         $file = media_sideload_image($upload_path.''.$tmp, 0, $desc);
+        
+         // Success JSON      
+         //echo __('File successfully uploaded to media library.', USP_NAME); 
+         $json = json_encode( 
+         	array(
+         		'error' => false,
+         		'msg' => __('File successfully uploaded to media library.', USP_NAME)
+      		)
+         );
+               
+         // Delete the file we just uplaoded from the tmp dir.
+         if(file_exists($tmp_path.''.$tmp)){
+             unlink($tmp_path.''.$tmp);
+         }else{
+            echo __('Nothing to delete, file does not exist', USP_NAME);
+         }           
+      }
+   	
+   	echo $json;
+   	die();
    }
-	
-	echo $json;
-	die();
 }
 
 

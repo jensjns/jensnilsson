@@ -3,8 +3,8 @@ Contributors: dcooney
 Donate link: http://connekthq.com/donate/
 Tags: stock photo, photos, stock, upload, media library, media, library, ajax, image upload, direct upload, wp media uploader, free stock photos, unsplash, high res, high resolution
 Requires at least: 3.6
-Tested up to: 4.1
-Stable tag: 1.1
+Tested up to: 4.4
+Stable tag: 1.1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -34,7 +34,7 @@ One click uploads of unsplash.com stock photos directly to your media library.
 ***
 
 = Website =
-http://connekthq.com/unsplashwp/
+https://connekthq.com/plugins/unsplash-wp/
 
 ***
 
@@ -87,6 +87,9 @@ How to install Ajax Load More.
 3. Unsplash images in a lightbox on your post edit/new/post pages.
 
 == Changelog ==
+
+= 1.1.2 =
+* Security update - adding admin verification for image uploads. 
 
 = 1.1.1 =
 * Replacing alert warning with console.log msg if Unsplash API feed is down. 

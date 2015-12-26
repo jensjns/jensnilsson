@@ -6,14 +6,14 @@ Description: One click uploads of unsplash.com stock photos directly to your med
 Author: Darren Cooney
 Twitter: @KaptonKaos
 Author URI: http://connekthq.com
-Version: 1.1.1
+Version: 1.1.2
 License: GPL
 Copyright: Darren Cooney & Connekt Media
 */
 
 
 
-define('USP_VERSION', '1.1.1');
+define('USP_VERSION', '1.1.2');
 define('USP_TITLE', 'Unsplash WP');
 
 class UnsplashStockPhotos {	
