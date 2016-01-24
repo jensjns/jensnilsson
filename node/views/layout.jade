@@ -22,7 +22,13 @@ html(style="background-image:url('#{data.siteSettings.backgroundImage.sizes['128
             }
         block styles
 
-    body.mv8(itemscope itemtype="http://schema.org/WebPage")
+    body(class=(data.mainMenu && data.mainMenu.length > 0 ? "mb8" : "mv8") itemscope itemtype="http://schema.org/WebPage")
+        if (data.mainMenu && data.mainMenu.length > 0)
+            header.mv4.site.mha
+                ul.list.pa0.unit-1of1.right-text.m-center-text
+                    each menuItem in data.mainMenu
+                        li.inline-block
+                            a.c-white.sans-serif.uc.bold.no-dec.ml2.hover-c-light-gray(href="#{menuItem.url}" title="#{menuItem.title}") #{menuItem.title}
         div.site.mha(itemprop="mainContentOfPage")
             block content
 

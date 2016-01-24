@@ -22,7 +22,8 @@ function init() {
 
     register_nav_menus(
         array(
-          'main' => 'Main menu',
+          'main_menu' => 'Main menu',
+          'footer_menu' => 'Footer menu',
         )
     );
 
@@ -191,10 +192,34 @@ function filter_content_blocks( $value, $post_id, $field ) {
 }
 add_filter('acf/load_value/name=content_blocks', 'filter_content_blocks', 10, 3);
 
+function jensnilsson_get_nav_menu( $menu_name ) {
+    $cleaned_menu_items = array();
+
+    if ( ( $locations = get_nav_menu_locations() ) && isset( $locations[ $menu_name ] ) ) {
+        $menu = wp_get_nav_menu_object( $locations[ $menu_name ] );
+
+        $menu_items = wp_get_nav_menu_items($menu->term_id);
+
+        foreach ( (array) $menu_items as $key => $menu_item ) {
+
+            array_push(
+                $cleaned_menu_items,
+                array(
+                    'title' => $menu_item->title,
+                    'url' => $menu_item->url,
+                )
+            );
+
+        }
+    }
+
+    return $cleaned_menu_items;
+}
+
+
 // decorates the passed object with the main menu.
 function apply_main_menu( $obj ) {
-    $obj->menu = new stdClass();
-    $obj->menu->data = '';
+    $obj->mainMenu = jensnilsson_get_nav_menu( 'main_menu' );
 }
 add_filter( 'apply-main-menu', 'apply_main_menu', 10, 1 );
 

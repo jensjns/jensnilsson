@@ -992,6 +992,15 @@ a {
 .v-middle {
   vertical-align: middle;
 }
+.inline {
+  display: inline;
+}
+.inline-block {
+  display: inline-block;
+}
+.align-right {
+  float: right;
+}
 .serif {
   font-family: 'Playfair Display', serif;
   font-weight: 400;
@@ -1016,6 +1025,12 @@ strong {
 }
 .center-text {
   text-align: center;
+}
+.right-text {
+  text-align: right;
+}
+.left-text {
+  text-align: left;
 }
 .c-dark-gray {
   color: #3e3f3a;
@@ -1198,8 +1213,11 @@ pre {
   .m-block {
     display: block;
   }
+  .m-center-text {
+    text-align: center;
+  }
 }
-.list-clean {
+.list {
   list-style-type: none;
 }
 .oa2 {
