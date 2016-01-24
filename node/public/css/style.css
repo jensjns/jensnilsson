@@ -120,23 +120,14 @@
 .hover-panel-twitter:hover {
   background-color: #55acee;
 }
-.panel-coderwall {
-  background-color: #343131;
-}
-.hover-panel-coderwall {
-  transition: background-color 0.2s;
-}
-.hover-panel-coderwall:hover {
-  background-color: #343131;
-}
 .panel-spotify {
-  background-color: #7ab800;
+  background-color: #2ebd59;
 }
 .hover-panel-spotify {
   transition: background-color 0.2s;
 }
 .hover-panel-spotify:hover {
-  background-color: #7ab800;
+  background-color: #2ebd59;
 }
 .panel-skype {
   background-color: #00aff0;
@@ -148,13 +139,13 @@
   background-color: #00aff0;
 }
 .panel-linkedin {
-  background-color: #0976b4;
+  background-color: #0077b5;
 }
 .hover-panel-linkedin {
   transition: background-color 0.2s;
 }
 .hover-panel-linkedin:hover {
-  background-color: #0976b4;
+  background-color: #0077b5;
 }
 .panel-dribbble {
   background-color: #444;
@@ -166,13 +157,13 @@
   background-color: #444;
 }
 .panel-lastfm {
-  background-color: #c3000d;
+  background-color: #d51007;
 }
 .hover-panel-lastfm {
   transition: background-color 0.2s;
 }
 .hover-panel-lastfm:hover {
-  background-color: #c3000d;
+  background-color: #d51007;
 }
 .panel-vimeo {
   background-color: #162221;
@@ -202,13 +193,13 @@
   background-color: #fe7a15;
 }
 .panel-500px {
-  background-color: #00aeef;
+  background-color: #0099e5;
 }
 .hover-panel-500px {
   transition: background-color 0.2s;
 }
 .hover-panel-500px:hover {
-  background-color: #00aeef;
+  background-color: #0099e5;
 }
 .panel-wordpress {
   background-color: #21759b;
@@ -1188,9 +1179,24 @@ pre {
     height: 300px;
   }
 }
+.flex {
+  display: flex;
+  flex-flow: row wrap;
+}
+.flex .flex-col {
+  flex: 1;
+}
+@media all and (max-width: 640px) {
+  .flex .flex-col {
+    flex-basis: 33.3333333%;
+  }
+}
 @media all and (max-width: 768px) {
   body .site {
     max-width: 100%;
+  }
+  .m-block {
+    display: block;
   }
 }
 .list-clean {
@@ -1245,10 +1251,4 @@ pre {
 }
 .o-light {
   border-color: #dfdfdf;
-}
-.flex {
-  display: flex;
-}
-.flex .flex-col {
-  flex: 1;
 }

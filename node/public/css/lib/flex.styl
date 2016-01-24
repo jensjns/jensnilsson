@@ -1,4 +1,10 @@
 .flex
     display flex
+    flex-flow row wrap
     .flex-col
         flex 1
+
+@media all and (max-width: 640px)
+    .flex
+        .flex-col
+            flex-basis 33.3333333%
