@@ -17,5 +17,5 @@ block content
         if (typeof data.socialLinks != "string" && data.socialLinks.length > 0)
             div.mt3.flex
                 each socialLink in data.socialLinks
-                    a.flex-col.center-text.pv3(href="#{socialLink.url}" target="_blank" title="#{socialLink.label} (#{socialLink.url})" class=("panel-" + socialLink.label.toLowerCase()))
+                    a.flex-col.center-text.pv3.hover-panel-dark(href="#{socialLink.url}" target="_blank" title="#{socialLink.label} (#{socialLink.url})" class=("panel-" + socialLink.label.toLowerCase()))
                         i(class=("c-white fa fa-" + socialLink.label.toLowerCase() + " fa-4x"))
