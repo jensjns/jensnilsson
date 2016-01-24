@@ -1,6 +1,9 @@
 doctype html
 html(style="background-image:url('#{data.siteSettings.backgroundImage.sizes['1280']}');")
     head
+        if (data.siteSettings && data.siteSettings.optimizelyExperimentId)
+            script(src="//cdn.optimizely.com/js/#{data.siteSettings.optimizelyExperimentId}.js")
+
         if (data.pageMeta && data.pageMeta.title)
             title #{data.pageMeta.title}
         else

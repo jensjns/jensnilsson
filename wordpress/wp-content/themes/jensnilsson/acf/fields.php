@@ -134,6 +134,27 @@ acf_add_local_field_group(array (
             'readonly' => 0,
             'disabled' => 0,
         ),
+        array (
+            'key' => 'field_56a4d4ce33889',
+            'label' => 'Optimizely Experiment ID',
+            'name' => 'optimizely_experiment_id',
+            'type' => 'text',
+            'instructions' => '',
+            'required' => 0,
+            'conditional_logic' => 0,
+            'wrapper' => array (
+                'width' => '',
+                'class' => '',
+                'id' => '',
+            ),
+            'default_value' => '',
+            'placeholder' => '',
+            'prepend' => '',
+            'append' => '',
+            'maxlength' => '',
+            'readonly' => 0,
+            'disabled' => 0,
+        ),
     ),
     'location' => array (
         array (
@@ -150,6 +171,8 @@ acf_add_local_field_group(array (
     'label_placement' => 'top',
     'instruction_placement' => 'label',
     'hide_on_screen' => '',
+    'active' => 1,
+    'description' => '',
 ));
 
 acf_add_local_field_group(array (
@@ -392,6 +415,8 @@ acf_add_local_field_group(array (
         9 => 'featured_image',
         10 => 'send-trackbacks',
     ),
+    'active' => 1,
+    'description' => '',
 ));
 
 acf_add_local_field_group(array (
@@ -460,6 +485,7 @@ acf_add_local_field_group(array (
             'max' => '',
             'layout' => 'table',
             'button_label' => 'Add Link',
+            'collapsed' => '',
             'sub_fields' => array (
                 array (
                     'key' => 'field_551fe85c97319',
@@ -600,6 +626,8 @@ acf_add_local_field_group(array (
     'label_placement' => 'top',
     'instruction_placement' => 'label',
     'hide_on_screen' => '',
+    'active' => 1,
+    'description' => '',
 ));
 
 endif;

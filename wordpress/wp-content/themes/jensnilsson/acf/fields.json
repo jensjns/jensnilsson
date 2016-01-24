@@ -131,6 +131,27 @@
                 "maxlength": "",
                 "readonly": 0,
                 "disabled": 0
+            },
+            {
+                "key": "field_56a4d4ce33889",
+                "label": "Optimizely Experiment ID",
+                "name": "optimizely_experiment_id",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": "",
+                "readonly": 0,
+                "disabled": 0
             }
         ],
         "location": [
@@ -147,7 +168,9 @@
         "style": "default",
         "label_placement": "top",
         "instruction_placement": "label",
-        "hide_on_screen": ""
+        "hide_on_screen": "",
+        "active": 1,
+        "description": ""
     },
     {
         "key": "group_5513031a288d0",
@@ -388,7 +411,9 @@
             "page_attributes",
             "featured_image",
             "send-trackbacks"
-        ]
+        ],
+        "active": 1,
+        "description": ""
     },
     {
         "key": "group_5516d7f3a9072",
@@ -456,6 +481,7 @@
                 "max": "",
                 "layout": "table",
                 "button_label": "Add Link",
+                "collapsed": "",
                 "sub_fields": [
                     {
                         "key": "field_551fe85c97319",
@@ -595,6 +621,8 @@
         "style": "default",
         "label_placement": "top",
         "instruction_placement": "label",
-        "hide_on_screen": ""
+        "hide_on_screen": "",
+        "active": 1,
+        "description": ""
     }
 ]

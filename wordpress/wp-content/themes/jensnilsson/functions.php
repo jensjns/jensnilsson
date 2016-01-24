@@ -27,7 +27,7 @@ function init() {
     );
 
     include 'acf/fields.php';
-    include 'post_types/how-to.php';
+    //include 'post_types/how-to.php';
 }
 add_action('init', 'init');
 
@@ -206,6 +206,7 @@ function apply_site_settings( $obj ) {
     $obj->siteSettings->backgroundImage = get_field( 'background_image', 'options' );
     $obj->siteSettings->mapboxAccessToken = get_field( 'mapbox_api_access_token', 'options' );
     $obj->siteSettings->mapboxMapId = get_field( 'mapbox_map_id', 'options' );
+    $obj->siteSettings->optimizelyExperimentId = get_field( 'optimizely_experiment_id', 'options' );
 
     apply_filters('apply-feed-links', $obj->siteSettings);
 }
