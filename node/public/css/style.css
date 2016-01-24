@@ -103,13 +103,13 @@
   background-color: #3b5998;
 }
 .panel-github {
-  background-color: #4183c4;
+  background-color: #333;
 }
 .hover-panel-github {
   transition: background-color 0.2s;
 }
 .hover-panel-github:hover {
-  background-color: #4183c4;
+  background-color: #333;
 }
 .panel-twitter {
   background-color: #55acee;
