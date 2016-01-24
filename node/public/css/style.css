@@ -210,6 +210,15 @@
 .hover-panel-500px:hover {
   background-color: #00aeef;
 }
+.panel-wordpress {
+  background-color: #21759b;
+}
+.hover-panel-wordpress {
+  transition: background-color 0.2s;
+}
+.hover-panel-wordpress:hover {
+  background-color: #21759b;
+}
 .pa0 {
   padding: 0px;
 }
