@@ -508,7 +508,7 @@
                         "key": "field_551fe8779731a",
                         "label": "URL",
                         "name": "url",
-                        "type": "url",
+                        "type": "text",
                         "instructions": "",
                         "required": 0,
                         "conditional_logic": 0,
@@ -518,7 +518,12 @@
                             "id": ""
                         },
                         "default_value": "",
-                        "placeholder": ""
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": "",
+                        "maxlength": "",
+                        "readonly": 0,
+                        "disabled": 0
                     }
                 ]
             },

@@ -84,6 +84,132 @@
 .hover-panel-light:hover {
   background-color: #dfdfdf;
 }
+.panel-instagram {
+  background-color: #3f729b;
+}
+.hover-panel-instagram {
+  transition: background-color 0.2s;
+}
+.hover-panel-instagram:hover {
+  background-color: #3f729b;
+}
+.panel-facebook {
+  background-color: #3b5998;
+}
+.hover-panel-facebook {
+  transition: background-color 0.2s;
+}
+.hover-panel-facebook:hover {
+  background-color: #3b5998;
+}
+.panel-github {
+  background-color: #4183c4;
+}
+.hover-panel-github {
+  transition: background-color 0.2s;
+}
+.hover-panel-github:hover {
+  background-color: #4183c4;
+}
+.panel-twitter {
+  background-color: #55acee;
+}
+.hover-panel-twitter {
+  transition: background-color 0.2s;
+}
+.hover-panel-twitter:hover {
+  background-color: #55acee;
+}
+.panel-coderwall {
+  background-color: #343131;
+}
+.hover-panel-coderwall {
+  transition: background-color 0.2s;
+}
+.hover-panel-coderwall:hover {
+  background-color: #343131;
+}
+.panel-spotify {
+  background-color: #7ab800;
+}
+.hover-panel-spotify {
+  transition: background-color 0.2s;
+}
+.hover-panel-spotify:hover {
+  background-color: #7ab800;
+}
+.panel-skype {
+  background-color: #00aff0;
+}
+.hover-panel-skype {
+  transition: background-color 0.2s;
+}
+.hover-panel-skype:hover {
+  background-color: #00aff0;
+}
+.panel-linkedin {
+  background-color: #0976b4;
+}
+.hover-panel-linkedin {
+  transition: background-color 0.2s;
+}
+.hover-panel-linkedin:hover {
+  background-color: #0976b4;
+}
+.panel-dribbble {
+  background-color: #444;
+}
+.hover-panel-dribbble {
+  transition: background-color 0.2s;
+}
+.hover-panel-dribbble:hover {
+  background-color: #444;
+}
+.panel-lastfm {
+  background-color: #c3000d;
+}
+.hover-panel-lastfm {
+  transition: background-color 0.2s;
+}
+.hover-panel-lastfm:hover {
+  background-color: #c3000d;
+}
+.panel-vimeo {
+  background-color: #162221;
+}
+.hover-panel-vimeo {
+  transition: background-color 0.2s;
+}
+.hover-panel-vimeo:hover {
+  background-color: #162221;
+}
+.panel-hacker-news {
+  background-color: #f60;
+}
+.hover-panel-hacker-news {
+  transition: background-color 0.2s;
+}
+.hover-panel-hacker-news:hover {
+  background-color: #f60;
+}
+.panel-stackoverflow {
+  background-color: #fe7a15;
+}
+.hover-panel-stackoverflow {
+  transition: background-color 0.2s;
+}
+.hover-panel-stackoverflow:hover {
+  background-color: #fe7a15;
+}
+.panel-500px {
+  background-color: #00aeef;
+}
+.hover-panel-500px {
+  transition: background-color 0.2s;
+}
+.hover-panel-500px:hover {
+  background-color: #00aeef;
+}
 .pa0 {
   padding: 0px;
 }
@@ -1110,4 +1236,10 @@ pre {
 }
 .o-light {
   border-color: #dfdfdf;
+}
+.flex {
+  display: flex;
+}
+.flex .flex-col {
+  flex: 1;
 }

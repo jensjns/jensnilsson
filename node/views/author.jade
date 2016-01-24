@@ -1,7 +1,10 @@
 extends layout
 
+block styles
+    link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css")
+
 block content
-    article.panel-white.relative.mb16.pt3.pb4
+    article.panel-white.relative.mb16.pt3(class=(typeof data.socialLinks != "string" && data.socialLinks.length > 0) ? "" : "pb3")
         header.mha.ph2.center-text
             img.round(src="#{data.profileImage.sizes.thumbnail}" alt="#{data.profileImage.alt}")
             h1.serif.bold.center-text.ph2
@@ -11,3 +14,8 @@ block content
                     #[span.octicon.octicon-mail.c-light] #[a.sans-serif(href="mailto:#{data.email}") #{data.email}]
         div.mt3
             div.ph2.markdown-body !{marked(data.profileDescription)}
+        if (typeof data.socialLinks != "string" && data.socialLinks.length > 0)
+            div.mt3.flex
+                each socialLink in data.socialLinks
+                    a.flex-col.center-text.pv3(href="#{socialLink.url}" target="_blank" title="#{socialLink.label} (#{socialLink.url})" class=("panel-" + socialLink.label.toLowerCase()))
+                        i(class=("c-white fa fa-" + socialLink.label.toLowerCase() + " fa-4x"))
