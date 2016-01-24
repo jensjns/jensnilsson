@@ -10,12 +10,12 @@ block content
             h1.serif.bold.center-text.ph2
                 span.c-dark-gray #{data.displayName}
             if (data.email)
-                div.mb1
-                    #[span.octicon.octicon-mail.c-light] #[a.sans-serif(href="mailto:#{data.email}") #{data.email}]
+                div.center-text
+                    a.sans-serif.c-dark.no-dec.bold.h5.hover-c-white.oa2.o-dark.ph2.pv1.hover-panel-dark.uc.ib(href="mailto:#{data.email}") Email me
         div.mt3
             div.ph2.markdown-body !{marked(data.profileDescription)}
         if (typeof data.socialLinks != "string" && data.socialLinks.length > 0)
             div.mt3.flex
                 each socialLink in data.socialLinks
-                    a.flex-col.center-text.pv3.hover-panel-dark(href="#{socialLink.url}" target="_blank" title="#{socialLink.label} (#{socialLink.url})" class=("panel-" + socialLink.label.toLowerCase()))
-                        i(class=("c-white fa fa-" + socialLink.label.toLowerCase() + " fa-4x"))
+                    a.flex-col.center-text.pv2.hover-panel-dark(href="#{socialLink.url}" target="_blank" title="#{socialLink.label} (#{socialLink.url})" class=("panel-" + socialLink.label.toLowerCase()))
+                        i(class=("c-white fa fa-" + socialLink.label.toLowerCase() + " fa-2x"))
