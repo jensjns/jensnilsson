@@ -1217,8 +1217,9 @@ pre {
     text-align: center;
   }
 }
-.list {
+.list-clean {
   list-style-type: none;
+  padding: 0;
 }
 .oa2 {
   border: 2px solid;
