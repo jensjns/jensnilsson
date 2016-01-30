@@ -240,7 +240,7 @@ add_filter( 'apply-site-settings', 'apply_site_settings', 10, 1 );
 // decorates the passed object with page-specific meta-data.
 function apply_page_meta($obj) {
     $obj->pageMeta = array(
-        'title' => wp_title( '|', false, 'right' )
+        'title' => wp_title( '|', false, 'right' ) . get_bloginfo( 'name' )
     );
 }
 add_filter( 'apply-page-meta', 'apply_page_meta', 10, 1);
