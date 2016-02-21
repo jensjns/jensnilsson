@@ -11,5 +11,6 @@ requirejs.config({
         hljs: "./lib/highlight.js/highlight.pack",
         swiper: "./lib/Swiper-3.0.6/dist/js/swiper.min",
         mapbox: "https://api.tiles.mapbox.com/mapbox.js/v2.1.8/mapbox",
+        baguettebox: "./lib/baguettebox-1.5.0/baguetteBox.min",
     },
 });

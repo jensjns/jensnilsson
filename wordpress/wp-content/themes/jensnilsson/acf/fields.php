@@ -224,7 +224,7 @@ acf_add_local_field_group(array (
                     'key' => '55145fb81b9e5',
                     'name' => 'gallery',
                     'label' => 'Image Gallery',
-                    'display' => 'table',
+                    'display' => 'block',
                     'sub_fields' => array (
                         array (
                             'key' => 'field_551460015bff1',
@@ -250,6 +250,28 @@ acf_add_local_field_group(array (
                             'max_height' => '',
                             'max_size' => '',
                             'mime_types' => '',
+                        ),
+                        array (
+                            'key' => 'field_56c9b7043478e',
+                            'label' => 'Display mode',
+                            'name' => 'display_mode',
+                            'type' => 'radio',
+                            'instructions' => '',
+                            'required' => 0,
+                            'conditional_logic' => 0,
+                            'wrapper' => array (
+                                'width' => '',
+                                'class' => '',
+                                'id' => '',
+                            ),
+                            'choices' => array (
+                                'slider' => 'Slider',
+                                'lightbox' => 'Lightbox',
+                            ),
+                            'other_choice' => 0,
+                            'save_other_choice' => 0,
+                            'default_value' => 'slider',
+                            'layout' => 'horizontal',
                         ),
                     ),
                     'min' => '',
@@ -387,13 +409,6 @@ acf_add_local_field_group(array (
                 'param' => 'post_type',
                 'operator' => '==',
                 'value' => 'post',
-            ),
-        ),
-        array (
-            array (
-                'param' => 'post_type',
-                'operator' => '==',
-                'value' => 'how-to',
             ),
         ),
     ),

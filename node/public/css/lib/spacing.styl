@@ -1,5 +1,6 @@
 $baseSize = 10
 $sizes = {
+    '-1': -1,
     '0': 0,
     '1': 1,
     '2': 2,
@@ -54,8 +55,9 @@ a(rule, size, u)
 spacing(baseSize, sizes)
     for n in a v h t r b l
         for m in sizes
-            .p{n}{m}
-                n(padding, (sizes[m]*baseSize), "px")
+            if( sizes[m] >= 0)
+                .p{n}{m}
+                    n(padding, (sizes[m]*baseSize), "px")
             .m{n}{m}
                 n(margin, (sizes[m]*baseSize), "px")
         .m{n}a

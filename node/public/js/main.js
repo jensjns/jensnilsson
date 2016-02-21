@@ -1,6 +1,8 @@
-require(['hljs', 'swiper', 'mapbox'], function(hljs, Swiper, L) {
+require(['hljs', 'swiper', 'mapbox', 'baguettebox'], function(hljs, Swiper, L, baguetteBox) {
 
     hljs.initHighlighting();
+
+    baguetteBox.run('.baguette-container');
 
     var swiper = new Swiper('.swiper-container', {
         pagination: '.swiper-pagination',

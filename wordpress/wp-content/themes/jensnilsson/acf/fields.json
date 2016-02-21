@@ -221,7 +221,7 @@
                         "key": "55145fb81b9e5",
                         "name": "gallery",
                         "label": "Image Gallery",
-                        "display": "table",
+                        "display": "block",
                         "sub_fields": [
                             {
                                 "key": "field_551460015bff1",
@@ -247,6 +247,28 @@
                                 "max_height": "",
                                 "max_size": "",
                                 "mime_types": ""
+                            },
+                            {
+                                "key": "field_56c9b7043478e",
+                                "label": "Display mode",
+                                "name": "display_mode",
+                                "type": "radio",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "choices": {
+                                    "slider": "Slider",
+                                    "lightbox": "Lightbox"
+                                },
+                                "other_choice": 0,
+                                "save_other_choice": 0,
+                                "default_value": "slider",
+                                "layout": "horizontal"
                             }
                         ],
                         "min": "",
@@ -384,13 +406,6 @@
                     "param": "post_type",
                     "operator": "==",
                     "value": "post"
-                }
-            ],
-            [
-                {
-                    "param": "post_type",
-                    "operator": "==",
-                    "value": "how-to"
                 }
             ]
         ],

@@ -270,6 +270,9 @@
 .ma16 {
   margin: 160px;
 }
+.ma-1 {
+  margin: -10px;
+}
 .maa {
   margin: auto;
 }
@@ -352,6 +355,10 @@
 .mv16 {
   margin-top: 160px;
   margin-bottom: 160px;
+}
+.mv-1 {
+  margin-top: -10px;
+  margin-bottom: -10px;
 }
 .mva {
   margin-top: auto;
@@ -437,6 +444,10 @@
   margin-right: 160px;
   margin-left: 160px;
 }
+.mh-1 {
+  margin-right: -10px;
+  margin-left: -10px;
+}
 .mha {
   margin-right: auto;
   margin-left: auto;
@@ -501,6 +512,9 @@
 .mt16 {
   margin-top: 160px;
 }
+.mt-1 {
+  margin-top: -10px;
+}
 .mta {
   margin-top: auto;
 }
@@ -563,6 +577,9 @@
 }
 .mr16 {
   margin-right: 160px;
+}
+.mr-1 {
+  margin-right: -10px;
 }
 .mra {
   margin-right: auto;
@@ -627,6 +644,9 @@
 .mb16 {
   margin-bottom: 160px;
 }
+.mb-1 {
+  margin-bottom: -10px;
+}
 .mba {
   margin-bottom: auto;
 }
@@ -689,6 +709,9 @@
 }
 .ml16 {
   margin-left: 160px;
+}
+.ml-1 {
+  margin-left: -10px;
 }
 .mla {
   margin-left: auto;
@@ -949,6 +972,9 @@
     margin-left: 100%;
   }
 }
+* {
+  box-sizing: border-box;
+}
 html {
   font-size: 16px;
   background: no-repeat center center fixed;
@@ -992,6 +1018,9 @@ a {
 .v-middle {
   vertical-align: middle;
 }
+.block {
+  display: block;
+}
 .inline {
   display: inline;
 }
@@ -1000,6 +1029,9 @@ a {
 }
 .align-right {
   float: right;
+}
+img {
+  max-width: 100%;
 }
 .serif {
   font-family: 'Playfair Display', serif;
@@ -1147,6 +1179,9 @@ strong {
 .lowercase,
 .lc {
   text-transform: lowercase;
+}
+.lh0 {
+  line-height: 0;
 }
 .hljs {
   padding: 0;

@@ -22,8 +22,8 @@ article.panel-white.mb16.relative(itemscope itemtype="http://schema.org/BlogPost
                         div.markdown-body !{marked(contentBlock[contentBlock.blockType])}
                 if (contentBlock.blockType == 'code')
                     div.pv4.ph2.panel-code-bg !{marked(contentBlock[contentBlock.blockType])}
-                if (contentBlock.blockType == 'gallery')
-                    div.swiper-container.unit-1of1
+                if (contentBlock.blockType == 'gallery' && contentBlock.display_mode == 'slider')
+                    div.swiper-container.unit-1of1.lh0
                         div.swiper-wrapper
                             each image in contentBlock[contentBlock.blockType]
                                 div.swiper-slide
@@ -33,6 +33,13 @@ article.panel-white.mb16.relative(itemscope itemtype="http://schema.org/BlogPost
                         div.swiper-pagination.swiper-pagination-white
                         div.swiper-button-next.swiper-button-white
                         div.swiper-button-prev.swiper-button-white
+                if (contentBlock.blockType == 'gallery' && contentBlock.display_mode == 'lightbox')
+                    div.ph2
+                        div.baguette-container.content-width.mha.lh0
+                            div.ma-1
+                                each image in contentBlock[contentBlock.blockType]
+                                    a.inline-block.unit-1of4.pa1(href="#{image.url}" data-caption="#{image.caption}")
+                                        img.block(src="#{image.sizes['square']}" alt="#{image.alt}")
                 if (contentBlock.blockType == 'image')
                     div.unit-1of1
                         img.unit-1of1(src="#{contentBlock[contentBlock.blockType].sizes['1080']}" alt="#{contentBlock[contentBlock.blockType].alt}")
