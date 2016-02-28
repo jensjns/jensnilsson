@@ -22,5 +22,6 @@ node_modules/
 node/node_modules/
 node/configs/*.js
 node/config.js
+!node/configs/config.example.js
 node/npm-debug.log
 version.txt
