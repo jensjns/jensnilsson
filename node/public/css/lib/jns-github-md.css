@@ -181,6 +181,18 @@
   list-style-type: lower-alpha;
 }
 
+.markdown-body ul li {
+  padding: 2px 0;
+}
+
+.markdown-body ul li:first-child {
+  padding-top: 0;
+}
+
+.markdown-body ul li:last-child {
+  padding-bottom: 0;
+}
+
 .markdown-body dd {
   margin-left: 0;
 }

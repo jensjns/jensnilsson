@@ -39,6 +39,8 @@ function jensnilsson_theme_setup() {
     add_image_size( '1080', 1080 ); // site width
     add_image_size( '1080.16/9', 1080, 607, true); // site width 16/9
     add_image_size( '1280', 1280); // 1280
+    add_image_size( 'avatar', 50, 50, true );
+    add_image_size( 'avatarx2', 100, 100, true );
 
     add_theme_support( 'title-tag' );
 }
