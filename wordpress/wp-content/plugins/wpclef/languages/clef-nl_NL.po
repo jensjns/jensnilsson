@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WPClef\n"
 "Report-Msgid-Bugs-To: support@getclef.com\n"
-"POT-Creation-Date: 2016-02-16 13:56-0800\n"
-"PO-Revision-Date: 2016-02-16 21:56+0000\n"
+"POT-Creation-Date: 2016-07-11 10:14-0700\n"
+"PO-Revision-Date: 2016-07-11 17:14+0000\n"
 "Last-Translator: Jesse Pollak <jesse@getclef.com>\n"
 "Language-Team: Dutch (Netherlands) (http://www.transifex.com/clef/wpclef/language/nl_NL/)\n"
 "MIME-Version: 1.0\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Language: nl_NL\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: includes/class.clef-admin.php:413 includes/class.clef-admin.php:495
+#: includes/class.clef-admin.php:416 includes/class.clef-admin.php:498
 #, php-format
 msgid "%d %s successfully invited to Clef."
 msgstr ""
@@ -71,7 +71,7 @@ msgid ""
 "Allow passwords for API (necessary for things like the WordPress mobile app)"
 msgstr "Sta wachtwoorden toe voor API (noodzakelijk voor situaties zoals de WordPress mobile app)"
 
-#: templates/admin/form.tpl.php:124
+#: templates/admin/form.tpl.php:116
 msgid "Allow visitors to your site to register with Clef"
 msgstr "Sta toe dat bezoekers van je site zich registreren met Clef"
 
@@ -79,11 +79,11 @@ msgstr "Sta toe dat bezoekers van je site zich registreren met Clef"
 msgid "An error occurred when creating your new account: "
 msgstr "Een fout is opgetreden bij het aanmaken van je nieuwe account:"
 
-#: includes/class.clef-admin.php:265 templates/admin/form.tpl.php:116
+#: includes/class.clef-admin.php:265 templates/admin/form.tpl.php:137
 msgid "Application ID"
 msgstr "Applicatie ID"
 
-#: includes/class.clef-admin.php:266 templates/admin/form.tpl.php:120
+#: includes/class.clef-admin.php:266 templates/admin/form.tpl.php:141
 msgid "Application Secret"
 msgstr "Applicatie Geheime Sleutel"
 
@@ -95,10 +95,10 @@ msgstr "Auteur"
 msgid "Badge"
 msgstr "Badge"
 
-#: includes/class.clef-network-admin.php:88
-#: includes/lib/ajax-settings/ajax-settings.php:64
-#: includes/lib/ajax-settings/ajax-settings.php:69
-#: includes/lib/ajax-settings/ajax-settings.php:75
+#: includes/class.clef-network-admin.php:82
+#: includes/lib/ajax-settings/ajax-settings.php:56
+#: includes/lib/ajax-settings/ajax-settings.php:61
+#: includes/lib/ajax-settings/ajax-settings.php:67
 msgid "Cheatin&#8217; uh?"
 msgstr "Cheatin&#8217; uh?"
 
@@ -108,7 +108,7 @@ msgstr "Cheatin&#8217; uh?"
 msgid "Clef"
 msgstr "Clef"
 
-#: templates/admin/form.tpl.php:113
+#: templates/admin/form.tpl.php:134
 msgid "Clef API Settings"
 msgstr "Clef API Instellingen"
 
@@ -116,7 +116,7 @@ msgstr "Clef API Instellingen"
 msgid "Clef is being managed by multi-site."
 msgstr "Clef wordt beheerd door multie-site."
 
-#: includes/class.clef-admin.php:457
+#: includes/class.clef-admin.php:460
 msgid ""
 "Clef is the best way to log in to WordPress <b>without usernames or "
 "passwords</b>. You're a few clicks away from joining more than 600,000 other"
@@ -151,7 +151,7 @@ msgid ""
 "(for the last time) to get started."
 msgstr "Klik <a href=\"%s\">hier</a> en log (voor de laatste keer) in met je gebruikersnaam en wachtwoord om te beginnen."
 
-#: includes/class.clef-admin.php:458
+#: includes/class.clef-admin.php:461
 msgid ""
 "Click below to finish setting up Clef or learn more <a "
 "href='https://getclef.com/wordpress' target='_blank'>here</a>."
@@ -247,8 +247,8 @@ msgid "Disconnect your Clef account"
 msgstr "Verbreek de verbinding met je Clef account"
 
 #: templates/admin/form.tpl.php:73
-msgid "Drag this your bookmarks bar"
-msgstr "Sleep dit naar je bookmark bar"
+msgid "Drag this to your bookmarks bar"
+msgstr ""
 
 #: templates/js-templates/invite.tpl.php:28
 msgid "Editor"
@@ -266,15 +266,32 @@ msgstr "Integreer de Clef golf in het login formulier"
 msgid "Enable Clef across the whole network"
 msgstr "Schakel Clef in over het gehele netwerk"
 
+#: includes/class.clef-admin.php:316
+msgid "Enable shortcode support"
+msgstr ""
+
+#: templates/admin/form.tpl.php:127
+msgid "Enable the Clef login shortcode"
+msgstr ""
+
+#: templates/admin/form.tpl.php:125
+msgid ""
+"Enabling shortcode support means that the OAuth2 state parameter cookie "
+"(i.e., <code>wordpress_clef_state</code>) is set on every request for all "
+"users including anonymous users browsing the front end. Thus server-side "
+"caches such as Varnish may lose the ability to provide full-page caching to "
+"anonymous users."
+msgstr ""
+
 #: templates/admin/form.tpl.php:63
 msgid "Enter override key here"
 msgstr "Voer de overrule sleutel hier in"
 
-#: includes/class.clef-utils.php:184
+#: includes/class.clef-utils.php:190
 msgid "Error retrieving Clef access token: "
 msgstr "Fout ophalen Clef toegangs code:"
 
-#: includes/class.clef-utils.php:198
+#: includes/class.clef-utils.php:204
 msgid "Error retrieving Clef user data: "
 msgstr "Fout ophalen Clef gebruikers data:"
 
@@ -282,7 +299,7 @@ msgstr "Fout ophalen Clef gebruikers data:"
 msgid "Everyone"
 msgstr "Iedereen"
 
-#: includes/class.clef-admin.php:459 templates/admin/tutorial.tpl.php:7
+#: includes/class.clef-admin.php:462 templates/admin/tutorial.tpl.php:7
 msgid "Finish setup"
 msgstr ""
 
@@ -355,7 +372,7 @@ msgstr "Laat je bezoekers weten dat je beveiligd bent met de Clef login door een
 msgid "Link"
 msgstr "Link"
 
-#: templates/admin/form.tpl.php:163
+#: templates/admin/form.tpl.php:180
 msgid "Log In"
 msgstr "Login"
 
@@ -379,7 +396,7 @@ msgstr "Bericht voor de login pagina"
 msgid "No thanks!"
 msgstr "Nee bedankt!"
 
-#: includes/class.clef-admin.php:384
+#: includes/class.clef-admin.php:387
 msgid "No users were invited to use Clef."
 msgstr ""
 
@@ -405,7 +422,7 @@ msgstr "Overrule Sleutel"
 msgid "Override network settings"
 msgstr "Overrule netwerk instellingen"
 
-#: templates/admin/form.tpl.php:145
+#: templates/admin/form.tpl.php:162
 msgid "Password"
 msgstr "Wachtwoord"
 
@@ -413,7 +430,7 @@ msgstr "Wachtwoord"
 msgid "Password Settings"
 msgstr "Wachtwoord Instellingen"
 
-#: includes/class.clef-login.php:282 includes/class.clef-login.php:389
+#: includes/class.clef-login.php:282 includes/class.clef-login.php:391
 msgid "Passwords have been disabled for this user."
 msgstr "Wachtwoorden zijn uitgeschakeld voor deze gebruiker."
 
@@ -437,7 +454,7 @@ msgstr "Koppel je Clef account voordat je alle wachtwoorden uitschakelt. Je kunt
 msgid "Preview of your customizations"
 msgstr "Voorbeeld van je aanpassingen"
 
-#: templates/admin/form.tpl.php:138
+#: templates/admin/form.tpl.php:155
 msgid "Preview of your login form"
 msgstr "Voorbeeld van je login formulier"
 
@@ -445,15 +462,25 @@ msgstr "Voorbeeld van je login formulier"
 msgid "Preview of your support"
 msgstr "Voorbeeld van je ondersteuning"
 
+#: templates/admin/form.tpl.php:114
+msgid ""
+"Register new users with the Clef mobile app. The <strong>Membership: anyone "
+"can register</strong> setting also must be enabled in WordPress's <a href='"
+msgstr ""
+
 #: includes/class.clef-admin.php:267
 msgid "Register with Clef"
 msgstr "Registreer met Clef"
 
-#: templates/admin/form.tpl.php:161
+#: templates/admin/form.tpl.php:113
+msgid "Register with your phone"
+msgstr "Registreer met je telefoon"
+
+#: templates/admin/form.tpl.php:178
 msgid "Remember Me"
 msgstr "Onthoudt Me"
 
-#: includes/class.clef-admin.php:328 includes/class.clef-network-admin.php:91
+#: includes/class.clef-admin.php:331 includes/class.clef-network-admin.php:85
 msgid "Security check; nonce failed."
 msgstr "Veiligheidscheck; nonce niet succesvol."
 
@@ -469,10 +496,18 @@ msgstr "Instellingen"
 msgid "Settings are being saved. Are you sure you want to navigate away?"
 msgstr "Instellingen zijn opgeslagen. Weet je zeker dat je hier weg wilt?"
 
-#: includes/lib/ajax-settings/ajax-settings.php:58
+#: includes/lib/ajax-settings/ajax-settings.php:49
 msgid ""
 "Settings could not be parsed — this may be caused by a plugin conflict."
 msgstr "Instellingen konden niet geparsed worden - dit kan worden veroorzaakt door een plug-in conflict."
+
+#: includes/class.clef-admin.php:315
+msgid "Shortcode settings"
+msgstr ""
+
+#: templates/admin/form.tpl.php:123
+msgid "Shortcode support"
+msgstr ""
 
 #: templates/admin/form.tpl.php:50
 msgid "Show Clef wave as primary login option"
@@ -486,7 +521,7 @@ msgstr ""
 msgid "Skip setup, I already have Clef API keys"
 msgstr "Sla setup over, ik heb al Clef API sleutels"
 
-#: includes/class.clef-utils.php:178 includes/class.clef-utils.php:192
+#: includes/class.clef-utils.php:184 includes/class.clef-utils.php:198
 msgid "Something went wrong: "
 msgstr "Er ging iets mis:"
 
@@ -504,7 +539,7 @@ msgid ""
 " new one."
 msgstr "Sorry, deze uitnodiging is verlopen. Neem aub contact op met je beheerder voor een nieuwe."
 
-#: includes/class.clef-login.php:382
+#: includes/class.clef-login.php:384
 msgid "Success. <b>Your Clef account has been connected!</b>"
 msgstr "Geslaagd. <b> Je Clef account is verbonden!</b>"
 
@@ -536,7 +571,7 @@ msgstr "Synchroniseer eenmalig, log overal in."
 msgid "Thanks!"
 msgstr "Bedankt!"
 
-#: includes/class.clef-utils.php:146
+#: includes/class.clef-utils.php:152
 msgid ""
 "The Clef account you're trying to connect is already associated to a "
 "different WordPress account"
@@ -572,19 +607,23 @@ msgstr "Er was een probleem met het verbreken van de verbinding met je Clef acco
 msgid "There was a problem sending invites: <%= error %>."
 msgstr "Er was een probleem met het versturen van de uitnodigingen: <%= error %>."
 
-#: includes/class.clef-admin.php:398
+#: includes/class.clef-admin.php:401
 #, php-format
 msgid "There was an error inviting users to Clef: %s"
 msgstr ""
 
-#: includes/class.clef-login.php:328
+#: includes/class.clef-login.php:327
+msgid "There's <b>no WordPress user</b> connected to your Clef account."
+msgstr ""
+
+#: includes/class.clef-login.php:329
 msgid ""
 "There's <b>no WordPress user</b> connected to your Clef account. <br></br> "
 "Log in with your standard username and password to <b>automatically connect "
 "your Clef account</b> now."
 msgstr "Er is <b>geen WordPress gebruiker</b> verbonden met je Clef account. <br></br> Login met je gebruikersnaam en wachtwoord om nu <b>automatisch te verbinden met je Clef account</b>."
 
-#: templates/admin/form.tpl.php:114
+#: templates/admin/form.tpl.php:135
 msgid ""
 "These keys connect your WordPress site to the Clef application you log in "
 "to. For more advanced settings, visit the <a "
@@ -618,7 +657,14 @@ msgstr "Gebruik netwerk instellingen"
 msgid "Use network settings everywhere"
 msgstr "Gebruik netwerk instellingen overal"
 
-#: templates/admin/form.tpl.php:141
+#: templates/admin/form.tpl.php:124
+msgid ""
+"Use the <code>[clef_render_login_button]</code> or <br "
+"/><code>[clef_render_login_button embed=true]</code> shortcodes on a custom "
+"login page."
+msgstr ""
+
+#: templates/admin/form.tpl.php:158
 msgid "Username"
 msgstr "Gebruikersnaam"
 
@@ -728,19 +774,19 @@ msgstr "voeg veiligheid toe"
 msgid "generate a secure override url for me"
 msgstr "genereer een veilige overrule url voor me"
 
-#: includes/class.clef-admin.php:503
+#: includes/class.clef-admin.php:506
 msgid "invalid Clef ID"
 msgstr "ongeldig Clef ID"
 
-#: includes/class.clef-ajax.php:55
+#: includes/class.clef-ajax.php:45
 msgid "invalid nonce"
 msgstr "ongeldige nonce"
 
-#: includes/class.clef-admin.php:470
+#: includes/class.clef-admin.php:473
 msgid "invalid role"
 msgstr "ongeldige rol"
 
-#: templates/admin/form.tpl.php:159 templates/login.tpl.php:39
+#: templates/admin/form.tpl.php:176 templates/login.tpl.php:39
 msgid "log in with a password"
 msgstr "login met een wachtwoord"
 
@@ -748,7 +794,7 @@ msgstr "login met een wachtwoord"
 msgid "needs setup"
 msgstr "installatie nodig"
 
-#: templates/admin/form.tpl.php:103 templates/admin/form.tpl.php:151
+#: templates/admin/form.tpl.php:103 templates/admin/form.tpl.php:168
 msgid "or"
 msgstr "of"
 
@@ -756,7 +802,7 @@ msgstr "of"
 msgid "show clef login"
 msgstr "toon Clef login"
 
-#: includes/class.clef-admin.php:489
+#: includes/class.clef-admin.php:492
 msgid "there are no other users without Clef with this role or greater"
 msgstr "er zijn geen andere gebruikers zonder Clef met deze rol of groter"
 
@@ -771,11 +817,11 @@ msgstr "er was een fout met het versturen van de uitnodigingsemail naar alle geb
 msgid "unable to send emails to the following users: "
 msgstr "niet in staat email te versturen naar de volgende gebruikers:"
 
-#: includes/class.clef-ajax.php:62
+#: includes/class.clef-ajax.php:52
 msgid "user does not have correct capabilities"
 msgstr "gebruiker heeft  niet de juiste verantwoordelijkheden"
 
-#: includes/class.clef-user-settings.php:100
+#: includes/class.clef-user-settings.php:94
 msgid ""
 "your passwords are currently disabled. <br/> If you disconnect your Clef "
 "account, you won't be able to log in. Please enable passwords for yourself "

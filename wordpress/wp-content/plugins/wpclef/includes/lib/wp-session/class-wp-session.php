@@ -16,7 +16,7 @@
  * @package WordPress
  * @since   3.7.0
  */
-final class WP_Session extends Recursive_ArrayAccess implements Iterator, Countable {
+final class ClefWP_Session extends Recursive_ArrayAccess implements Iterator, Countable {
     /**
      * ID of the current session.
      *
@@ -52,9 +52,9 @@ final class WP_Session extends Recursive_ArrayAccess implements Iterator, Counta
      *
      * @return bool|WP_Session
      */
-    public static function get_instance() {
+    public static function get_instance($cookie_name = false) {
         if ( ! self::$instance ) {
-            self::$instance = new self();
+            self::$instance = new self($cookie_name);
         }
 
         return self::$instance;
@@ -68,9 +68,15 @@ final class WP_Session extends Recursive_ArrayAccess implements Iterator, Counta
      * @param $session_id
      * @uses apply_filters Calls `wp_session_expiration` to determine how long until sessions expire.
      */
-    protected function __construct() {
-        if ( isset( $_COOKIE[WP_SESSION_COOKIE] ) ) {
-            $cookie = stripslashes( $_COOKIE[WP_SESSION_COOKIE] );
+    public function __construct($cookie_name = false) {
+        if ($cookie_name) {
+            $this->cookie_name = $cookie_name;
+        } else {
+            $this->cookie_name = CLEF_WP_SESSION_COOKIE;
+        }
+
+        if ( isset( $_COOKIE[$this->cookie_name] ) ) {
+            $cookie = stripslashes( $_COOKIE[$this->cookie_name] );
             $cookie_crumbs = explode( '||', $cookie );
 
             $this->session_id = $cookie_crumbs[0];
@@ -113,15 +119,15 @@ final class WP_Session extends Recursive_ArrayAccess implements Iterator, Counta
      * @uses apply_filters Calls `wp_session_expiration` to get the standard expiration time for sessions.
      */
     protected function set_expiration() {
-        $this->exp_variant = time() + (int) apply_filters( 'wp_session_expiration_variant', 24 * 60 );
-        $this->expires = time() + (int) apply_filters( 'wp_session_expiration', 30 * 60 );
+        $this->exp_variant = time() + (int) apply_filters( 'clef_wp_session_expiration_variant', 24 * 60 );
+        $this->expires = time() + (int) apply_filters( 'clef_wp_session_expiration', 30 * 60 );
     }
 
     /**
      * Set the session cookie
      */
     protected function set_cookie() {
-        setcookie( WP_SESSION_COOKIE, $this->session_id . '||' . $this->expires . '||' . $this->exp_variant , $this->expires, COOKIEPATH, COOKIE_DOMAIN );
+        setcookie( $this->cookie_name, $this->session_id . '||' . $this->expires . '||' . $this->exp_variant , (int) $this->expires, COOKIEPATH, COOKIE_DOMAIN, ClefUtils::is_tls(), true );
     }
 
     /**

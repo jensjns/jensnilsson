@@ -208,7 +208,7 @@ class ClefAdmin {
             'setup' => array(
                 'siteName' => get_option('blogname'),
                 'siteDomain' => get_option('siteurl'),
-                'logoutHook' => wp_login_url(),
+                'logoutHook' => ClefUtils::get_logout_hook_url(),
                 'source' => 'wordpress',
                 'affiliates' => apply_filters('clef_add_affiliate', array())
             ),
@@ -311,6 +311,9 @@ class ClefAdmin {
         );
 
         $invite_users_settings = $form->addSection('invite_users', __('Invite Users', "wpclef"));
+
+        $shortcode_settings = $form->addSection('shortcode_settings', __('Shortcode settings', 'wpclef'), '');
+        $shortcode_settings->addField('shortcode', __('Enable shortcode support', 'wpclef'), Settings_API_Util_Field::TYPE_CHECKBOX);
 
         $pro = ClefPro::start();
         $pro->add_settings($form);

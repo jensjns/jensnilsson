@@ -86,6 +86,15 @@ class ClefCore {
         $settings_changes = false;
 
         if ($previous_version) {
+            if (version_compare($previous_version, '2.6.0', '<')) {
+                $this->settings->set('shortcode_settings_shortcode', true);
+            }
+
+            if (version_compare($previous_version, '2.5.0', '<')) {
+                if (isset($_COOKIE['clef_wp_session'])) {
+                    ClefSession::migrate('clef_wp_session');
+                }
+            }
 
             if (version_compare($previous_version, '2.2.9.1', '<')) {
                 $this->onboarding->set_first_login_true();
