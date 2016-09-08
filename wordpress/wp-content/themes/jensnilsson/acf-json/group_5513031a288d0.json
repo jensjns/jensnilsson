@@ -1,0 +1,290 @@
+{
+    "key": "group_5513031a288d0",
+    "title": "Post",
+    "fields": [
+        {
+            "key": "field_5513035a605b8",
+            "label": "Hero Image",
+            "name": "hero_image",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "wide",
+            "library": "all",
+            "min_width": 1280,
+            "min_height": 300,
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_55145fab5bfef",
+            "label": "Content blocks",
+            "name": "content_blocks",
+            "type": "flexible_content",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "button_label": "Add Content Block",
+            "min": 1,
+            "max": "",
+            "layouts": [
+                {
+                    "key": "55145fb81b9e5",
+                    "name": "gallery",
+                    "label": "Image Gallery",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_551460015bff1",
+                            "label": "Gallery",
+                            "name": "gallery",
+                            "type": "gallery",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "min": "",
+                            "max": "",
+                            "preview_size": "medium",
+                            "library": "all",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": ""
+                        },
+                        {
+                            "key": "field_56c9b7043478e",
+                            "label": "Display mode",
+                            "name": "display_mode",
+                            "type": "radio",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "slider": "Slider",
+                                "lightbox": "Lightbox"
+                            },
+                            "other_choice": 0,
+                            "save_other_choice": 0,
+                            "default_value": "slider",
+                            "layout": "horizontal"
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                {
+                    "key": "551460685bff3",
+                    "name": "markdown",
+                    "label": "Markdown Content",
+                    "display": "table",
+                    "sub_fields": [
+                        {
+                            "key": "field_551460775bff4",
+                            "label": "Markdown",
+                            "name": "markdown",
+                            "type": "markdown",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "autogrow": 1,
+                            "editor-theme": "dark",
+                            "preview-theme": "github",
+                            "syntax-highlight": 1,
+                            "syntax-theme": "monokai_sublime",
+                            "media-upload": 1,
+                            "tab-function": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                {
+                    "key": "5516a3350697d",
+                    "name": "code",
+                    "label": "Markdown Code",
+                    "display": "table",
+                    "sub_fields": [
+                        {
+                            "key": "field_5516a35c0697e",
+                            "label": "Code",
+                            "name": "code",
+                            "type": "markdown",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "autogrow": 1,
+                            "editor-theme": "dark",
+                            "preview-theme": "github",
+                            "syntax-highlight": 1,
+                            "syntax-theme": "monokai_sublime",
+                            "media-upload": 0,
+                            "tab-function": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                {
+                    "key": "5517d9b3b5ef5",
+                    "name": "image",
+                    "label": "Wide Image",
+                    "display": "table",
+                    "sub_fields": [
+                        {
+                            "key": "field_5517d9c4b5ef6",
+                            "label": "Image",
+                            "name": "image",
+                            "type": "image",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array",
+                            "preview_size": 1080,
+                            "library": "all",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                {
+                    "key": "553560bd2fc27",
+                    "name": "geojson",
+                    "label": "geoJSON Data",
+                    "display": "table",
+                    "sub_fields": [
+                        {
+                            "key": "field_553560cc2fc28",
+                            "label": "geoJSON",
+                            "name": "geojson",
+                            "type": "mapbox_geojson",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "mapbox_access_token": "pk.eyJ1IjoiamVuc25pbHNzb24iLCJhIjoiNVo4bXZ4dyJ9.xaolYAwWL8jhmJsZz17toA",
+                            "mapbox_map_id": "jensnilsson.iad26bb7",
+                            "height": 400
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                {
+                    "key": "57d1c36619fb4",
+                    "name": "spotifyplaybutton",
+                    "label": "Spotify play button",
+                    "display": "table",
+                    "sub_fields": [
+                        {
+                            "key": "field_57d1c37919fb5",
+                            "label": "Spotify URI",
+                            "name": "spotify_uri",
+                            "type": "text",
+                            "instructions": "<a href=\"https:\/\/developer.spotify.com\/technologies\/widgets\/spotify-play-button\/\" target=\"_blank\">Instructions<\/a>",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": "",
+                            "readonly": 0,
+                            "disabled": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content",
+        "excerpt",
+        "custom_fields",
+        "discussion",
+        "comments",
+        "revisions",
+        "author",
+        "format",
+        "page_attributes",
+        "featured_image",
+        "send-trackbacks"
+    ],
+    "active": 1,
+    "description": "",
+    "modified": 1473364940
+}
