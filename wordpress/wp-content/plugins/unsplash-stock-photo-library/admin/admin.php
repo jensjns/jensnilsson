@@ -7,7 +7,6 @@ add_action( 'wp_ajax_nopriv_usp_upload_image', 'usp_upload_image' ); // Ajax Sav
 
 
 
-
 /*
 *  usp_admin_vars
 *  Create admin variables and ajax nonce
@@ -122,7 +121,7 @@ function usp_media_popup_content() {
    </div>
 <?php
 }
-
+ 
 
 
 /*
@@ -136,9 +135,17 @@ function usp_settings_page(){ ?>
 	<div class="admin cnkt-container settings" id="usp-settings">
 		<div class="wrap">
 		   <div class="header-wrap">
-            <h2><?php echo USP_TITLE; ?> <span><?php echo USP_VERSION; ?></span></h2>
-            <p><?php _e('One click uploads of <a href="https://unsplash.com/" target="_blank">unsplash.com</a> stock photos directly to your media library', USP_NAME); ?></p>            
+            <h1><?php echo USP_TITLE; ?> <span><?php echo USP_VERSION; ?></span>
+            <em><?php _e('One click uploads of <a href="https://unsplash.com/" target="_blank">unsplash.com</a> stock photos directly to your media library', USP_NAME); ?> &rarr; <a href="https://wordpress.org/plugins/instant-images/" target="_blank">Upgrade to Instant Images</a>!</em>        
+            </h1>    
          </div>
+         <div class="callout-unsplash">
+            <h4>Unsplash WP is now <a href="https://wordpress.org/plugins/instant-images/" target="_blank">Instant Images</strong></a></h4>
+            <p>A new name, new features and new functionality including a powerful <strong>image search</strong> and access to the official <a href="https://unsplash.com/developers" target="_blank"><strong>Unsplash API</strong></a>.<br/>
+            <a style="margin-top: 10px;" class="button button-primary" href="https://wordpress.org/plugins/instant-images/" target="_blank">Download Instant Images Now!</a></p>
+            </p>
+         </div>
+         
 		   <div class="cnkt-main">
 		   	<div class="group">   		   	   
 	   			<?php include( USP_PATH . 'admin/includes/unsplash-photos.php');	?>    

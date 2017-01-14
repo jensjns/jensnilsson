@@ -3,8 +3,8 @@ Contributors: dcooney
 Donate link: http://connekthq.com/donate/
 Tags: stock photo, photos, stock, upload, media library, media, library, ajax, image upload, direct upload, wp media uploader, free stock photos, unsplash, high res, high resolution
 Requires at least: 3.6
-Tested up to: 4.4
-Stable tag: 1.1.2
+Tested up to: 4.6
+Stable tag: 1.1.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -12,8 +12,11 @@ One click uploads of unsplash.com stock photos directly to your media library.
 
 == Description ==
 
-**Unsplash WP** is the fastest way to upload high quality stock photos from [unsplash.com](http://unsplash.com) directly to your media library — **all without ever leaving WordPress**! 
+> #### Unsplash WP is now Instant Images!
+> A new name, new features and new functionality including a powerful image search and access to the official Unsplash API.
+> [Download Instant Images Now!](https://wordpress.org/plugins/instant-images/)
 
+**Unsplash WP** is the fastest way to upload high quality stock photos from [unsplash.com](http://unsplash.com) directly to your media library — **all without ever leaving WordPress**! 
 
 = Features =
 
@@ -55,7 +58,7 @@ Some hosts lock down their servers and you may be required to update your php.in
 
 == Installation ==
 
-How to install Ajax Load More.
+How to install UnsplashWP.
 
 = Using The WordPress Dashboard =
 
@@ -68,7 +71,7 @@ How to install Ajax Load More.
 
 1. Navigate to the 'Add New' in the plugins dashboard
 2. Navigate to the 'Upload' area
-3. Select `ajax-load-more.zip` from your computer
+3. Select `unsplash-stock-photo-library.zip` from your computer
 4. Click 'Install Now'
 5. Activate the plugin in the Plugin dashboard
 
@@ -87,6 +90,9 @@ How to install Ajax Load More.
 3. Unsplash images in a lightbox on your post edit/new/post pages.
 
 == Changelog ==
+
+= 1.1.3 =
+* UPDATE - Unsplash WP is not longer support and is now Instant Images - https://wordpress.org/plugins/instant-images/. 
 
 = 1.1.2 =
 * Security update - adding admin verification for image uploads. 

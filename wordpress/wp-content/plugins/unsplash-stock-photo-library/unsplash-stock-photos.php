@@ -6,17 +6,17 @@ Description: One click uploads of unsplash.com stock photos directly to your med
 Author: Darren Cooney
 Twitter: @KaptonKaos
 Author URI: http://connekthq.com
-Version: 1.1.2
+Version: 1.1.3
 License: GPL
 Copyright: Darren Cooney & Connekt Media
 */
 
 
 
-define('USP_VERSION', '1.1.2');
+define('USP_VERSION', '1.1.3');
 define('USP_TITLE', 'Unsplash WP');
 
-class UnsplashStockPhotos {	
+class UnsplashStockPhotos {	 
    
    function __construct() {	     
       define('USP_PATH', plugin_dir_path(__FILE__));

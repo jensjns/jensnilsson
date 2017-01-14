@@ -235,7 +235,19 @@
          if(usp_current <= usp_pages)
             get_photos();            
          //console.log(usp_current);  //console.log(usp_pages);
-      });                     
+      });   
+      
+      $(document).on( 'click', '.my-unsplashwp-notice .notice-dismiss', function() {
+
+          jQuery.ajax({
+              url: ajaxurl,
+              data: {
+                  action: 'my_dismiss_unsplashwp_notice'
+              }
+          })
+      
+      })
+                        
       
    });	
    			
